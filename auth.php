@@ -216,8 +216,10 @@ if ($override_user_themes == 1 || !$theme) {
 $expiredate1 = time() + 3600 * 24 * 365;
 $expiredate2 = time() + 600;
 
+echo 222;
+
 // update LastVisit cookie. This cookie is updated each time auth.php runs
-setcookie("LastVisit", time(), $expiredate1, $cookiepath, $cookiedomain, $cookiesecure);
+setcookie("LastVisit", time(), $expiredate1);
 
 // set LastVisitTemp cookie, which only gets the time from the LastVisit
 // cookie if it does not exist yet
@@ -229,7 +231,7 @@ if (!isset($HTTP_COOKIE_VARS["LastVisitTemp"])) {
 }
 
 // set cookie.
-setcookie("LastVisitTemp", $temptime, $expiredate2, $cookiepath, $cookiedomain, $cookiesecure);
+setcookie("LastVisitTemp", $temptime, $expiredate2);
 
 // set vars for all scripts
 $now_time = time();
