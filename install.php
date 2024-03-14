@@ -1,5 +1,5 @@
 <?php
-include('extention.inc');
+
 include("functions.$phpEx");
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">

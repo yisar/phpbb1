@@ -18,13 +18,13 @@
  *   (at your option) any later version.
  *
  ***************************************************************************/
-include('extention.inc');
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = $l_search;
 $pagetype = "other";
-include('page_header.'.$phpEx);
+include('page_header.php');
 
 if(!$submit)
 {
@@ -263,5 +263,5 @@ else
 </TABLE>
 <?php
 }
-	include('page_tail.'.$phpEx);
+	include('page_tail.php');
 ?>

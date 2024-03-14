@@ -18,10 +18,10 @@
  *   (at your option) any later version.
  *
  ***************************************************************************/
-include('extention.inc');
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = $l_topictitle;
 $pagetype = "viewtopic";
 
@@ -35,7 +35,7 @@ $forum_name = own_stripslashes($myrow[forum_name]);
 // Note: page_header is included later on, because this page might need to send a cookie.
 if(($myrow[forum_type] == 1) && !$user_logged_in && !$logging_in)
 {
-	require('page_header.'.$phpEx);
+	require('page_header.php');
 ?>
 <FORM ACTION="<?php echo $PHP_SELF?>" METHOD="POST">
 	<TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="<?php echo $tablewidth?>">
@@ -75,7 +75,7 @@ if(($myrow[forum_type] == 1) && !$user_logged_in && !$logging_in)
 	</TABLE>
 </FORM>
 <?php
-require('page_tail.'.$phpEx);
+require('page_tail.php');
 exit();
 }
 else
@@ -114,7 +114,7 @@ else
 
 	if (!check_priv_forum_auth($userdata[user_id], $forum, FALSE, $db))
 	  {
-	     include('page_header.'.$phpEx);
+	     include('page_header.php');
 	     error_die("$l_privateforum $l_noread");
 	  }
 
@@ -138,7 +138,7 @@ if(!$result = mysql_query($sql, $db))
 $myrow = mysql_fetch_array($result);
 $topic_subject = own_stripslashes($myrow[topic_title]);
 $lock_state = $myrow[topic_status];
-include('page_header.'.$phpEx);
+include('page_header.php');
 
 ?>
 <?php
@@ -358,6 +358,6 @@ echo "<a href=\"$url_phpbb/topicadmin.$phpEx?mode=del&topic=$topic&forum=$forum\
 
 }
 
-require('page_tail.'.$phpEx);
+require('page_tail.php');
 
 ?>

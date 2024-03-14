@@ -18,14 +18,14 @@
  *   (at your option) any later version.
  *
  ***************************************************************************/
-include('extention.inc');
+
 if(isset($cancel) && $cancel) {
 	header("Location: viewtopic.$phpEx?topic=$topic&forum=$forum");
 }
 
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = "Post Reply";
 $pagetype = "reply";
 
@@ -78,28 +78,28 @@ if($HTTP_POST_VARS['submit']) {
       }
       else if($username == '' || $password == '') {
 	 // no valid session, need to check user/pass.
-	 include('page_header.'.$phpEx);
+	 include('page_header.php');
 	 error_die($l_userpass);
       }
 
       if($userdata[user_level] == -1) {
-	 include('page_header.'.$phpEx);
+	 include('page_header.php');
 	 error_die($l_userremoved);
       }
       if($userdata[user_id] != -1) {
 	 $md_pass = md5($password);
 	 $userdata = get_userdata($username, $db);
 	 if($md_pass != $userdata["user_password"]) {
-	    include('page_header.'.$phpEx);
+	    include('page_header.php');
 	    error_die($l_wrongpass);
 	 }
       }
       if($forum_access == 3 && $userdata[user_level] < 2) {
-	 include('page_header.'.$phpEx);
+	 include('page_header.php');
 	 error_die($l_nopost);
       }
       if(is_banned($userdata[user_id], "username", $db)) {
-	 include('page_header.'.$phpEx);
+	 include('page_header.php');
 	 error_die($l_banned);
       }
       if($userdata[user_id] != -1) {
@@ -110,7 +110,7 @@ if($HTTP_POST_VARS['submit']) {
    }
    else {
       if($forum_access == 3 && $userdata[user_level] < 2) {
-	 include('page_header.'.$phpEx);
+	 include('page_header.php');
 	 error_die($l_nopost);
       }
    }
@@ -121,7 +121,7 @@ if($HTTP_POST_VARS['submit']) {
      {
 	   if (!check_priv_forum_auth($userdata[user_id], $forum, TRUE, $db))
 	   {
-	      include('page_header.'.$phpEx);
+	      include('page_header.php');
 	      error_die("$l_privateforum $l_nopost");
 	   }
 	}
@@ -211,7 +211,7 @@ if($HTTP_POST_VARS['submit']) {
    // Subtract 1 because we want the nr of replies, not the nr of posts.
 
    $forward = 1;
-   include('page_header.'.$phpEx);
+   include('page_header.php');
 
    echo "<br><TABLE BORDER=\"0\" CELLPADDING=\"1\" CELLSPACEING=\"0\" ALIGN=\"CENTER\" VALIGN=\"TOP\" WIDTH=\"$tablewidth\">";
    echo "<TR><TD  BGCOLOR=\"$table_bgcolor\"><TABLE BORDER=\"0\" CALLPADDING=\"1\" CELLSPACEING=\"1\" WIDTH=\"100%\">";
@@ -225,7 +225,7 @@ if($HTTP_POST_VARS['submit']) {
 
 	if(($forum_type == 1) && !$user_logged_in && !$logging_in)
 	{
-		require('page_header.'.$phpEx);
+		require('page_header.php');
 	?>
 	<FORM ACTION="<?php echo $PHP_SELF?>" METHOD="POST">
 		<TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="<?php echo $tablewidth?>">
@@ -267,7 +267,7 @@ if($HTTP_POST_VARS['submit']) {
 		</TABLE>
 	</FORM>
 	<?php
-		require('page_tail.'.$phpEx);
+		require('page_tail.php');
 		exit();
 	}
    else
@@ -293,7 +293,7 @@ if($HTTP_POST_VARS['submit']) {
 	     set_session_cookie($sessid, $sesscookietime, $sesscookiename, $cookiepath, $cookiedomain, $cookiesecure);
 	  }
 
-	require('page_header.'.$phpEx);
+	require('page_header.php');
 
 	if ($forum_type == 1)
 	  {
@@ -452,5 +452,5 @@ if($HTTP_POST_VARS['submit']) {
 	echo "</CENTER><BR>";
 
 }
-require('page_tail.'.$phpEx);
+require('page_tail.php');
 ?>

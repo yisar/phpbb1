@@ -17,10 +17,10 @@
  *   (at your option) any later version.
  *
  ***************************************************************************/
-include('../extention.inc');
-include('../functions.'.$phpEx);
-include('../config.'.$phpEx);
-require('../auth.'.$phpEx);
+
+include('../functions.phpphp');
+include('../config.php');
+require('../auth.php');
 
 if($login) {
    if ($username == '') {
@@ -54,7 +54,7 @@ else if(!$user_logged_in) {
    echo 2333;
    $pagetitle = "Forum Administration";
    $pagetype = "admin";
-   include('../page_header.'.$phpEx);
+   include('../page_header.php');
 
 ?>
      <TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="<?php echo $TableWidth?>">
@@ -80,14 +80,14 @@ else if(!$user_logged_in) {
      </FORM>
      </TD></TR></TABLE></TD></TR></TABLE>
 <?php
-     include('../page_tail.'.$phpEx);
+     include('../page_tail.php');
      exit();
 }
 else if($user_logged_in && $userdata[user_level] == 4) {
 
 $pagetitle = "Forum Administration";
 $pagetype = "admin";
-include('../page_header.'.$phpEx);
+include('../page_header.php');
 
 if($mode) {
 
@@ -180,7 +180,7 @@ else {
    $pagetype = "admin";
    $pagetitle = "Access Denied!";
 
-   include('../page_header.'.$phpEx);
+   include('../page_header.php');
 ?>
      <TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="<?php echo $TableWidth?>">
      <TR><TD  BGCOLOR="<?php echo $table_bgcolor?>">
@@ -192,5 +192,5 @@ else {
      </TD></TR></TABLE></TD></TR></TABLE>
 <?php
 }
-include('../page_tail.'.$phpEx);
+include('../page_tail.php');
 ?>

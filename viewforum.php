@@ -18,10 +18,10 @@
  *   (at your option) any later version.
  *
  ***************************************************************************/
-include('extention.inc');
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = $l_viewforum;
 $pagetype = "viewforum";
 if($forum == -1)
@@ -38,7 +38,7 @@ $forum_name = own_stripslashes($myrow[forum_name]);
 
 if(($myrow[forum_type] == 1) && !$user_logged_in && !$logging_in) 
 {
-	require('page_header.'.$phpEx);
+	require('page_header.php');
 ?>
 <FORM ACTION="<?php echo $PHP_SELF?>" METHOD="POST">
 	<TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="<?php echo $tablewidth?>">
@@ -77,7 +77,7 @@ if(($myrow[forum_type] == 1) && !$user_logged_in && !$logging_in)
 	</TABLE>
 </FORM>
 <?php
-require('page_tail.'.$phpEx);
+require('page_tail.php');
 exit();
 }
 else 
@@ -107,7 +107,7 @@ else
 		
 	}
 
-	require('page_header.'.$phpEx);
+	require('page_header.php');
 	
 	if ($myrow[forum_type] == 1)
 	{
@@ -276,5 +276,5 @@ make_jumpbox();
 
 <?php
 }
-require('page_tail.'.$phpEx);
+require('page_tail.php');
 ?>

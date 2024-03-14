@@ -24,13 +24,13 @@
 * CELLPADDING. I also added the [$url_phpbb/] settings to all the <a href
 * commands.
 */
-include('extention.inc');
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = $l_whosonline;
 $pagetype = "other";
-include('page_header.'.$phpEx);
+include('page_header.php');
 ?>
 <TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="<?php echo $TableWidth?>"><TR><TD BGCOLOR="<?php echo $table_bgcolor?>">
 <TABLE BORDER="0" CELLPADDING="1" CELLSPACING="1" WIDTH="100%">
@@ -70,5 +70,5 @@ else {
 </TR></TABLE></TD></TR></TABLE>
 
 <?php
-include('page_tail.'.$phpEx);
+include('page_tail.php');
 ?>

@@ -18,13 +18,13 @@
  *   (at your option) any later version.
  *
  ***************************************************************************/
-include('extention.inc');
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = "Post PM Reply";
 $pagetype = "pmreply";
-include('page_header.'.$phpEx);
+include('page_header.php');
 
 if($submit) {
 	if($message == '') {
@@ -259,5 +259,5 @@ if($submit) {
 
 <?PHP
 }
-require('page_tail.'.$phpEx);
+require('page_tail.php');
 ?>

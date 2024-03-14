@@ -18,10 +18,10 @@
  *
  ***************************************************************************/
 
-include('../extention.inc');
-include('../functions.'.$phpEx);
-include('../config.'.$phpEx);
-require('../auth.'.$phpEx);
+
+include('../functions.php');
+include('../config.php');
+require('../auth.php');
 
 if($login) 
 {
@@ -60,7 +60,7 @@ else if(!$user_logged_in)
 {
 	$pagetitle = "Forum Administration";
 	$pagetype = "admin";
-	include('../page_header.'.$phpEx);
+	include('../page_header.php');
    
 ?>
 	<TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="<?php echo $TableWidth?>">
@@ -86,14 +86,14 @@ else if(!$user_logged_in)
 	</TABLE>
 
 <?php
-	include('../page_tail.'.$phpEx);
+	include('../page_tail.php');
 	exit();
 }
 else if($user_logged_in && $userdata[user_level] == 4)
 {
 	$pagetitle = "Forum Administration";
 	$pagetype = "admin";
-	include('../page_header.'.$phpEx);
+	include('../page_header.php');
 	
 	if (!$op)
 	{
@@ -383,5 +383,5 @@ else if($user_logged_in && $userdata[user_level] == 4)
 	
 }
 
-include('../page_tail.'.$phpEx);
+include('../page_tail.php');
 ?>

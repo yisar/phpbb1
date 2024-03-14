@@ -18,7 +18,7 @@
 *   (at your option) any later version.
 *
 ***************************************************************************/
-include('extention.inc');
+
 include('config.' . $phpEx);
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">

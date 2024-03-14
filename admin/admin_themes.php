@@ -18,10 +18,10 @@
    *  (at your option) any later version.
    *
    ****************************************************************************/
-include('../extention.inc');
-include('../functions.'.$phpEx);
-include('../config.'.$phpEx);
-require('../auth.'.$phpEx);
+
+include('../functions.php');
+include('../config.php');
+require('../auth.php');
 
 if($login) {
    if ($username == '') {
@@ -53,7 +53,7 @@ if($login) {
 else if(!$user_logged_in) {
    $pagetitle = "Forum Administration";
    $pagetype = "admin";
-   include('../page_header.'.$phpEx);
+   include('../page_header.php');
 
    ?>
      <TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="<?php echo $TableWidth?>">
@@ -71,7 +71,7 @@ else if(!$user_logged_in) {
      </FORM>
      </TD></TR></TABLE></TD></TR></TABLE>
      <?php
-     include('../page_tail.'.$phpEx);
+     include('../page_tail.php');
    exit();
 }
 else if($user_logged_in && $userdata[user_level] == 4) {
@@ -81,7 +81,7 @@ else if($user_logged_in && $userdata[user_level] == 4) {
    $pagetype = "admin";
 
    if($mode) {
-      include('../page_header.'.$phpEx);
+      include('../page_header.php');
    switch($mode) {
     case 'add':
       if($HTTP_POST_VARS['submit']) {
@@ -93,7 +93,7 @@ else if($user_logged_in && $userdata[user_level] == 4) {
 	 		}
 	 if($die == 1) {
 	    echo "You did not fill out all parts of the form, please go back and do so, all fields are required.";
-	    include('../page_tail.'.$phpEx);
+	    include('../page_tail.php');
 	    exit();
 	 }
 
@@ -107,7 +107,7 @@ else if($user_logged_in && $userdata[user_level] == 4) {
 	         VALUES ('$theme_name', '$theme_bgcolor', '$theme_textcolor', '$theme_color1', '$theme_color2', '$theme_tablebg', '$image_header', '$image_newtopic', '$image_reply', '$theme_linkcolor', '$theme_vlinkcolor', '0', '$theme_fontface', '$theme_fontsize1', '$theme_fontsize2', '$theme_fontsize3', '$theme_fontsize4', '$theme_tablewidth', '$image_replylocked')";
 	 if(!$r = mysql_query($sql, $db)) {
 	    echo "Error inserting theme into the database.<BR>".mysql_error($db)."\n";
-	    include('../page_tail.'.$phpEx);
+	    include('../page_tail.php');
 	    exit();
 	 }
 ?>
@@ -263,7 +263,7 @@ else if($user_logged_in && $userdata[user_level] == 4) {
 	 }
 	 if($die == 1) {
 	    echo "You did not fill out all parts of the form, please go back and do so, all fields are required.";
-	    include('../page_tail.'.$phpEx);
+	    include('../page_tail.php');
 	    exit();
 	 }
 
@@ -311,7 +311,7 @@ else if($user_logged_in && $userdata[user_level] == 4) {
 	 $sql = "SELECT * FROM themes WHERE theme_id = '$theme_id'";
 	 if(!$r = mysql_query($sql, $db)) {
 	    echo "Error selecting theme from the database. Please go back and try again.<BR>";
-	    include('page_tail.'.$phpEx);
+	    include('page_tail.php');
 	    exit();
 	 }
 	 $m = mysql_fetch_array($r);
@@ -454,7 +454,7 @@ else if($user_logged_in && $userdata[user_level] == 4) {
    }
 }
 else {
-   include('../page_header.'.$phpEx);
+   include('../page_header.php');
 ?>
      <FORM ACTION="<?php echo $PHP_SELF?>" METHOD="POST">
      <TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="95%"><TR><TD  BGCOLOR="<?php echo $table_bgcolor?>">
@@ -471,7 +471,7 @@ else {
      $sql = "SELECT theme_name, theme_id, theme_default FROM themes ORDER BY theme_name";
    if(!$r = mysql_query($sql, $db)) {
       echo "<TR BGCOLOR=$color2 ALIGN=CENTER><TD COLSPAN=3>Error: Could not query the database!<BR>".mysql_error($db)."</TD></TR></TABLE></TABLE>";
-      include('../page_tail.'.$phpEx);
+      include('../page_tail.php');
       exit();
    }
    echo "<TR BGCOLOR=\"$color1\" ALIGN=\"CENTER\"><TD>Name</TD><TD>Default Theme?</TD><TD>Action</TD>";
@@ -503,7 +503,7 @@ else {
       $pagetype = "admin";
       $pagetitle = "Access Denied!";
 
-      include('../page_header.'.$phpEx);
+      include('../page_header.php');
    ?>
           <TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="<?php echo $TableWidth?>">
           <TR><TD  BGCOLOR="<?php echo $table_bgcolor?>">
@@ -516,6 +516,6 @@ else {
      <?php
 }
 
-include('../page_tail.'.$phpEx);
+include('../page_tail.php');
 ?>
 

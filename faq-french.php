@@ -23,13 +23,13 @@
 /***************************************************************************
  * Created by: Steven Cunningham (defender@webinfractions.com) for phpBB
  * *************************************************************************/
-include('extention.inc');
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = "FAQ";
 $pagetype = "other";
-include('page_header.'.$phpEx);
+include('page_header.php');
 ?>
 
 <div align="center"><center>
@@ -38,29 +38,29 @@ include('page_header.'.$phpEx);
 <table border="0" width="100%" bgcolor=>
     <tr bgcolor="<?php echo $color1?>">
         <td><font size="<?php echo $FontSize4?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>"><b>Frequently
-          Asked Questions (Questions Fréquemment Posées)</font></b></td>
+          Asked Questions (Questions Frï¿½quemment Posï¿½es)</font></b></td>
     </tr>
     <tr bgcolor="<?php echo $color2?>">
         <td>
           <font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $linkcolor?>">
-          <a href="#register">Suis-je obligé de m'inscrire ?</a><br>
+          <a href="#register">Suis-je obligï¿½ de m'inscrire ?</a><br>
           <a href="#smilies">Puis-je utiliser des smileys ?</a><br>
           <a href="#html">Utiliser du HTML</a><br>
-          <a href="#bbcode">Utiliser les codes spécifiques aux forums</a><br>
-          <a href="#mods">Que font les modérateurs ?</a><br>
+          <a href="#bbcode">Utiliser les codes spï¿½cifiques aux forums</a><br>
+          <a href="#mods">Que font les modï¿½rateurs ?</a><br>
 	  <a href="#profile">Puis-je modifier mon profil ?</a><br>
           <a href="#prefs">Puis-je "customiser" le forum ?</a><br>
           <a href="#cookies">Le forum utilise-t-il des cookies ?</a><br>
-          <a href="#edit">Puis-je éditer mes propres posts ?</a><br>
-          <a href="#attach">Puis-je insérer des documents attachés ?</a><br>
+          <a href="#edit">Puis-je ï¿½diter mes propres posts ?</a><br>
+          <a href="#attach">Puis-je insï¿½rer des documents attachï¿½s ?</a><br>
           <a href="#search">Puis-je faire une recherche sur le forum ?</a><br>
-          <a href="#signature">Puis-je insérer une signature à la fin de mes posts ?</a><br>
+          <a href="#signature">Puis-je insï¿½rer une signature ï¿½ la fin de mes posts ?</a><br>
           <a href="#announce">Que sont les "announcements" ?</a><br>
-          <a href="#pw">Existe-t-il un système de récupération de mon nom d'utilisateur / mot de passe ?</a><br>
-          <a href="#notify">Puis-je être notifié par e-mail si quelqu'un répond à mon sujet ?</a><br>
-          <a href="#searchprivate">Puis-je faire une recherche sur les forums privés ?</a><br>
+          <a href="#pw">Existe-t-il un systï¿½me de rï¿½cupï¿½ration de mon nom d'utilisateur / mot de passe ?</a><br>
+          <a href="#notify">Puis-je ï¿½tre notifiï¿½ par e-mail si quelqu'un rï¿½pond ï¿½ mon sujet ?</a><br>
+          <a href="#searchprivate">Puis-je faire une recherche sur les forums privï¿½s ?</a><br>
           <a href="#ranks">Quels sont les "ranks" dans les forums <?php echo $sitename?></a><br>
-          <a href="#rednumbers">Pourquoi y a-t-il des icônes en flamme parfois ?</a></p></font>
+          <a href="#rednumbers">Pourquoi y a-t-il des icï¿½nes en flamme parfois ?</a></p></font>
         </td>
     </tr>
     <tr bgcolor="<?php echo $color1?>">
@@ -73,14 +73,14 @@ include('page_header.'.$phpEx);
     <tr bgcolor="<?php echo $color2?>">
         <td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	L'inscription est uniquement requise ou pas en fonction des forums. Suivant comment l'administrateur du forum a réglé ses forums, certains 
-	nécessiteront que vous soyez inscrits pour y poster, et d'autres vous permettront d'y poster librement. Si le fait de poster anonymement 
-	est autorisé vous pouvez le faire simplement en n'entrant ni nom d'utilisateur ni mot de passe lorsqu'ils vous seront demandés.
-        L'inscription est libre et il ne vous est pas demandé de donner votre vrai nom. Vous n'êtes pas obligé de donner votre vrai adresse e-mail,
-        cependant elle ne sera utilisée que pour vous faire parvenir un nouveau mot de passe au cas où vous ayez oublié le votre. Par défaut 
-        votre adresse e-mail est cachée aux yeux de tout le monde (excepté de l'administrateur du forum) mais vous pouvez permettre aux autres 
-        utilisateur de voir votre adresse e-mail en sélectionnant l'option "Autoriser les autres membres à voir votre Adresse Email" lors de 
-        l'inscription ou encore ultérieurement dans votre profil. Vous pouvez vous inscrire 
+	L'inscription est uniquement requise ou pas en fonction des forums. Suivant comment l'administrateur du forum a rï¿½glï¿½ ses forums, certains 
+	nï¿½cessiteront que vous soyez inscrits pour y poster, et d'autres vous permettront d'y poster librement. Si le fait de poster anonymement 
+	est autorisï¿½ vous pouvez le faire simplement en n'entrant ni nom d'utilisateur ni mot de passe lorsqu'ils vous seront demandï¿½s.
+        L'inscription est libre et il ne vous est pas demandï¿½ de donner votre vrai nom. Vous n'ï¿½tes pas obligï¿½ de donner votre vrai adresse e-mail,
+        cependant elle ne sera utilisï¿½e que pour vous faire parvenir un nouveau mot de passe au cas oï¿½ vous ayez oubliï¿½ le votre. Par dï¿½faut 
+        votre adresse e-mail est cachï¿½e aux yeux de tout le monde (exceptï¿½ de l'administrateur du forum) mais vous pouvez permettre aux autres 
+        utilisateur de voir votre adresse e-mail en sï¿½lectionnant l'option "Autoriser les autres membres ï¿½ voir votre Adresse Email" lors de 
+        l'inscription ou encore ultï¿½rieurement dans votre profil. Vous pouvez vous inscrire 
         <a href="<?php echo $url_phpbb?>/bb_register.<?php echo $phpEx?>?mode=agreement">ici</a></font>.
 	</td>
     </tr>
@@ -94,9 +94,9 @@ include('page_header.'.$phpEx);
     <tr bgcolor="<?php echo $color2?>">
         <td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	Vous avez probablement vu d'autres utilisateurs du forum ayant inséré des smileys dans leurs messages. Les smileys sont des assosciations de 
-	caractères claviers utilisés pour exprimer des émotions, comme des sourires ou des grimaces. Ce forum convertit automatiquement certains smileys
-	en une représentation graphique. Les smileys suivant sont actuellement supportés :
+	Vous avez probablement vu d'autres utilisateurs du forum ayant insï¿½rï¿½ des smileys dans leurs messages. Les smileys sont des assosciations de 
+	caractï¿½res claviers utilisï¿½s pour exprimer des ï¿½motions, comme des sourires ou des grimaces. Ce forum convertit automatiquement certains smileys
+	en une reprï¿½sentation graphique. Les smileys suivant sont actuellement supportï¿½s :
         </font><BR>
 	
 	<div align="center"><center>
@@ -158,10 +158,10 @@ include('page_header.'.$phpEx);
 	<tr bgcolor="<?php echo $color2?>">
 	<td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	Si les administrateurs et modérateurs ont activés cette option, vous pourrez utilisez du HTML dans vos posts. A chaque fois que vous posterez 
-	un nouveau message, il vous sera demandé si le code BB (cf. ci-dessous) et/ou le HTML est activé. Si le HTML est activé, vous pouvez alors utiliser
-	du code de ce type, mais soyez attentifs à bien utiliser la syntaxe du HTML : en cas d'erreur, un modérateur ou adminsitrateur pourrait être amené à 
-	éditer votre post.
+	Si les administrateurs et modï¿½rateurs ont activï¿½s cette option, vous pourrez utilisez du HTML dans vos posts. A chaque fois que vous posterez 
+	un nouveau message, il vous sera demandï¿½ si le code BB (cf. ci-dessous) et/ou le HTML est activï¿½. Si le HTML est activï¿½, vous pouvez alors utiliser
+	du code de ce type, mais soyez attentifs ï¿½ bien utiliser la syntaxe du HTML : en cas d'erreur, un modï¿½rateur ou adminsitrateur pourrait ï¿½tre amenï¿½ ï¿½ 
+	ï¿½diter votre post.
 	</font></td>
 	<tr bgcolor="<?php echo $color1?>">
 	<td>
@@ -173,10 +173,10 @@ include('page_header.'.$phpEx);
 	<tr bgcolor="<?php echo $color2?>">
 	<td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-Le code BB est une variation des tags HTML avec laquelle vous êtes peut-être déjà familier. De manière simpliste, il permet d'ajouter des fonctionnalités ou 
-de l'enrichissement de texte qui normalement auraient requis du code HTML. Vous pouvez utiliser du code BB même si le HTML n'est pas activé sur le Forum 
-que vous utilisez. Vous pouvez préférer le code BB au HTML, même si le HTML est validé sur votre forum, car il est de syntaxe plus courte et plus sûr 
-d'usage (des erreurs de codage et de syntaxe ne conduiront pas à autant de soucis).
+Le code BB est une variation des tags HTML avec laquelle vous ï¿½tes peut-ï¿½tre dï¿½jï¿½ familier. De maniï¿½re simpliste, il permet d'ajouter des fonctionnalitï¿½s ou 
+de l'enrichissement de texte qui normalement auraient requis du code HTML. Vous pouvez utiliser du code BB mï¿½me si le HTML n'est pas activï¿½ sur le Forum 
+que vous utilisez. Vous pouvez prï¿½fï¿½rer le code BB au HTML, mï¿½me si le HTML est validï¿½ sur votre forum, car il est de syntaxe plus courte et plus sï¿½r 
+d'usage (des erreurs de codage et de syntaxe ne conduiront pas ï¿½ autant de soucis).
 </font>
 <P>
 
@@ -185,34 +185,34 @@ d'usage (des erreurs de codage et de syntaxe ne conduiront pas à autant de souci
 <TR bgcolor="<?php echo $color1?>">
 <TD>
 <FONT SIZE="2" FACE="Verdana, Arial">
-Créer des hyperliens</FONT></td></tr>
+Crï¿½er des hyperliens</FONT></td></tr>
 <TR bgcolor="<?php echo $color2?>"><TD><FONT SIZE="2" FACE="Verdana, Arial">
-Si le code BB est validé dans votre forum, vous n'avez plus besoin d'utiliser le code [URL] pour créer un hyperlien. Mettez simplement l'URL complète d'une
-des manières suivantes et le lien sera créé automatiquement.
+Si le code BB est validï¿½ dans votre forum, vous n'avez plus besoin d'utiliser le code [URL] pour crï¿½er un hyperlien. Mettez simplement l'URL complï¿½te d'une
+des maniï¿½res suivantes et le lien sera crï¿½ï¿½ automatiquement.
 <UL><FONT SIZE="2" FACE="Verdana, Arial" color="silver">
 <LI> http://www.votreURL.com
 <LI> www.votreURL.com
 </font>
 
-Remarquez que vous pouvez au choix utiliser la formulation complète de l'adresse URL avec "le http://" ou la raccourcir en commençant au "www" : cependant
- si le site à lier ne commence pas par "wwww", vous devez écrire l'adresse URL complète. De la même manière, si le BBcode est activé, vous pouvez utiliser 
-des préfixes https et FTP dans ce mode.
+Remarquez que vous pouvez au choix utiliser la formulation complï¿½te de l'adresse URL avec "le http://" ou la raccourcir en commenï¿½ant au "www" : cependant
+ si le site ï¿½ lier ne commence pas par "wwww", vous devez ï¿½crire l'adresse URL complï¿½te. De la mï¿½me maniï¿½re, si le BBcode est activï¿½, vous pouvez utiliser 
+des prï¿½fixes https et FTP dans ce mode.
 
 <P>
-L'ancien code [URL] continuera à fonctionner comme détaillé ci-dessous.
+L'ancien code [URL] continuera ï¿½ fonctionner comme dï¿½taillï¿½ ci-dessous.
 
-Encapsulez jsut le lient comme montré dans l'exemple ci-dessous (le code BB est en <FONT COLOR="#FF0000">rouge</FONT>).
+Encapsulez jsut le lient comme montrï¿½ dans l'exemple ci-dessous (le code BB est en <FONT COLOR="#FF0000">rouge</FONT>).
 <P><center>
 <FONT COLOR="#FF0000">[url]</FONT>www.choixpc.com<FONT COLOR="#FF0000">[/url]</FONT>
 <P></center>
 Vous pouvez aussi faire de vrais hyperliens en utilisant le code HTML [url].  Utilisez juste le format suivant :
 <BR><center>
-<FONT COLOR="#FF0000">[url=http://www.choixpc.com]</font>Choisir son PC pièce par pièce<FONT COLOR="#FF0000">[/url]</font>
+<FONT COLOR="#FF0000">[url=http://www.choixpc.com]</font>Choisir son PC piï¿½ce par piï¿½ce<FONT COLOR="#FF0000">[/url]</font>
 </center><p>
-Dans les exemples ci-dessus, le code BB génère automatiquement un lien vers l'URL qui est associée. Il assurera aussi l'ouverture du lien dans une nouvelle
-fenêtre lorsque l'utilisateur cliquera dessus. Notez que la partie  "http://" de l'URL est complètement optionnelle. Dans le second exemple ci-dessus, le code
-permet de lier le texte de votre choix vers toute URL inscrite après le symbôle égal. Remarquez aussi que vous ne devez pas utiliser de guillemets à 
-l'intérieur du tag URL.
+Dans les exemples ci-dessus, le code BB gï¿½nï¿½re automatiquement un lien vers l'URL qui est associï¿½e. Il assurera aussi l'ouverture du lien dans une nouvelle
+fenï¿½tre lorsque l'utilisateur cliquera dessus. Notez que la partie  "http://" de l'URL est complï¿½tement optionnelle. Dans le second exemple ci-dessus, le code
+permet de lier le texte de votre choix vers toute URL inscrite aprï¿½s le symbï¿½le ï¿½gal. Remarquez aussi que vous ne devez pas utiliser de guillemets ï¿½ 
+l'intï¿½rieur du tag URL.
 </font>
 </td>
 <tr bgcolor="<?php echo $color1?>"><td>
@@ -220,14 +220,14 @@ l'intérieur du tag URL.
 Lier des email</FONT></td></tr>
 <TR bgcolor="<?php echo $color2?>"><TD>
 <FONT SIZE="2" FACE="Verdana, Arial">
-Pour ajouter un hyperlien vers une adresse email dans votre message, encapsulez juste l'adresse email comme montré dans l'exemple ci-dessous.
+Pour ajouter un hyperlien vers une adresse email dans votre message, encapsulez juste l'adresse email comme montrï¿½ dans l'exemple ci-dessous.
 (Le code BB est en <FONT COLOR="#FF0000">rouge</FONT>).
 <P>
 <CENTER>
 <FONT COLOR="#FF0000">[email]</FONT>adresse@email.com<FONT COLOR="#FF0000">[/email]</FONT>
 </CENTER>
 <P>
-Dans cet exemple, le code BB génère automatiquement un lien vers cette adresse e-mail encapsulée.
+Dans cet exemple, le code BB gï¿½nï¿½re automatiquement un lien vers cette adresse e-mail encapsulï¿½e.
 </FONT>
 </td></tr>
 <tr bgcolor="<?php echo $color1?>"><td>
@@ -235,7 +235,7 @@ Dans cet exemple, le code BB génère automatiquement un lien vers cette adresse e
 Le gras et l'italique</FONT></td></tr>
 <TR bgcolor="<?php echo $color2?>"><TD>
 <FONT SIZE="2" FACE="Verdana, Arial">
-Vous pouvez faire du texte gras ou italique en encapsulant les portions de texte appropriées avec, respectivement, les tags [b] [/b] et [i] [/i].
+Vous pouvez faire du texte gras ou italique en encapsulant les portions de texte appropriï¿½es avec, respectivement, les tags [b] [/b] et [i] [/i].
 <P>
 <CENTER>
 Bonjour, <FONT COLOR="#FF0000">[b]</FONT><B>James</B><FONT COLOR="#FF0000">[/b]</FONT><BR>
@@ -251,7 +251,7 @@ Les listes</FONT></td></tr>
 <FONT SIZE="2" FACE="Verdana, Arial">
 Vous pouvez faire des listes avec des point noirs, des chiffres ou des lettres.
 <P>
-Liste non ordonnées, avec des points noirs :
+Liste non ordonnï¿½es, avec des points noirs :
 <P>
 <FONT COLOR="#FF0000">[list]</FONT>
 <BR>
@@ -264,10 +264,10 @@ Ceci produit:
 <LI> Ceci est le premier objet en liste.
 <LI> Ceci est le second objet en liste..
 </ul>
-Remarquez que vous devez inclure une fermeture de liste à la fin de chacune des listes.
+Remarquez que vous devez inclure une fermeture de liste ï¿½ la fin de chacune des listes.
 
 <P>
-Faire des listes ordonnées avec des lettre ou des chiffres est tout aussi simple. Il suffit d'ajouter respectivement [LIST=A] et [LIST=1].
+Faire des listes ordonnï¿½es avec des lettre ou des chiffres est tout aussi simple. Il suffit d'ajouter respectivement [LIST=A] et [LIST=1].
 <P>
 Voici un exemple :
 <P>
@@ -292,14 +292,14 @@ Ce qui produit :
 Ajouter des images</font></td></tr>
 <TR bgcolor="<?php echo $color2?>"><TD>
 <FONT SIZE="2" FACE="Verdana, Arial">
-Pour ajouter des images dans votre message, encapsulez simplement l'URL de l'image comme vu dans les exemples précédents (le code BBCode est en <FONT COLOR="#FF0000">rouge</FONT>).
+Pour ajouter des images dans votre message, encapsulez simplement l'URL de l'image comme vu dans les exemples prï¿½cï¿½dents (le code BBCode est en <FONT COLOR="#FF0000">rouge</FONT>).
 <P>
 <CENTER>
 <FONT COLOR="#FF0000">[img]</FONT>http://www.choixpc.com/p4.jpg<FONT COLOR="#FF0000">[/img]</FONT>
 </CENTER>
 <P>
 Dans cet exemple, le code BB rend ce graphisme automatiquement visible dans votre message. Remarquez que la partie "http://" de l'URL est ici 
-nécessaire pour le code <FONT COLOR="#FF0000">[img]</FONT>.
+nï¿½cessaire pour le code <FONT COLOR="#FF0000">[img]</FONT>.
 </FONT>
 </td></tr>
 <TR bgcolor="<?php echo $color1?>"><TD>
@@ -307,13 +307,13 @@ nécessaire pour le code <FONT COLOR="#FF0000">[img]</FONT>.
 Citer un autre message</font></td></tr>
 <TR bgcolor="<?php echo $color2?>"><TD>
 <FONT SIZE="2" FACE="Verdana, Arial">
-Pour citer une partie de ce que quelqu'un a écris, faites un couper/coller de la partie en question et encapsulez là comme montré ci-dessous. (le Code BB est en <FONT COLOR="#FF0000">rouge</FONT>).
+Pour citer une partie de ce que quelqu'un a ï¿½cris, faites un couper/coller de la partie en question et encapsulez lï¿½ comme montrï¿½ ci-dessous. (le Code BB est en <FONT COLOR="#FF0000">rouge</FONT>).
 <P>
 <CENTER>
-<FONT COLOR="#FF0000">[QUOTE]</FONT>Pour utliser ces forums correctement... <BR>pensez à lire la FAQ et à utiliser la fonction recherche pour vérifier si la question n'a pas déjà été posée.<FONT COLOR="#FF0000">[/QUOTE]</FONT>
+<FONT COLOR="#FF0000">[QUOTE]</FONT>Pour utliser ces forums correctement... <BR>pensez ï¿½ lire la FAQ et ï¿½ utiliser la fonction recherche pour vï¿½rifier si la question n'a pas dï¿½jï¿½ ï¿½tï¿½ posï¿½e.<FONT COLOR="#FF0000">[/QUOTE]</FONT>
 </CENTER>
 <P>
-Dans cet exemple, le code BB met automatiquement en citation et entre des lignes le texte auquel vous faites référence.
+Dans cet exemple, le code BB met automatiquement en citation et entre des lignes le texte auquel vous faites rï¿½fï¿½rence.
 </td>
 </tr>
 <TR bgcolor="<?php echo $color1?>"><TD>
@@ -321,7 +321,7 @@ Dans cet exemple, le code BB met automatiquement en citation et entre des lignes
 Code Tag</FONT></td></tr>
 <TR bgcolor="<?php echo $color2?>"><TD>
 <FONT SIZE="2" FACE="Verdana, Arial">
-De manière similaire au tag QUOTE, le tag CODE permet de préserver le formatage du texte écris. Ceci est particulièrement utile pour afficher du code
+De maniï¿½re similaire au tag QUOTE, le tag CODE permet de prï¿½server le formatage du texte ï¿½cris. Ceci est particuliï¿½rement utile pour afficher du code
 de programmation, par exemple.
 <P>
 
@@ -333,7 +333,7 @@ print "Hello World!";
 <FONT COLOR="#FF0000">[/CODE]</FONT>
 
 <P>
-Dans cet exemple, le code BB met automatiquement en citation le texte et en préserve le formatage.
+Dans cet exemple, le code BB met automatiquement en citation le texte et en prï¿½serve le formatage.
 </FONT>
 </td>
 </tr>
@@ -341,8 +341,8 @@ Dans cet exemple, le code BB met automatiquement en citation le texte et en prés
 </td></tr></table>
 </blockquote>
 <BR>
-Vous ne devez pas utiliser à la fois les code HTML et BB pour réaliser la même fonctionnalité.
-Notez aussi que le code BB, n'est pas sensible à la casse (ainsi vous pouvez utiliser <FONT COLOR="#FF0000">[URL]</FONT> tout comme <FONT COLOR="#FF0000">[url]</FONT>).
+Vous ne devez pas utiliser ï¿½ la fois les code HTML et BB pour rï¿½aliser la mï¿½me fonctionnalitï¿½.
+Notez aussi que le code BB, n'est pas sensible ï¿½ la casse (ainsi vous pouvez utiliser <FONT COLOR="#FF0000">[URL]</FONT> tout comme <FONT COLOR="#FF0000">[url]</FONT>).
 <P>
 <FONT COLOR="silver">Usage incorrect de code BB</FONT>
 <P>
@@ -363,22 +363,22 @@ les crochets et le texte auquel vous appliquez le code.
         <td nowrap>
 	<p align="left"><a name="mods">
 	<font color="<?php echo $textcolor?>" size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>">
-	<b>Les Modérateurs (Modo)</b></font></a></p>
+	<b>Les Modï¿½rateurs (Modo)</b></font></a></p>
         </td>
     </tr>
     <tr bgcolor="<?php echo $color2?>">
         <td>
           <p>
 	    <font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	    Les modérateurs controlent les forums. Ils peuvent, éditer, supprimer, verrouiller ou déplacer tout post dans leurs sections.
-            Si vous avez une question à propos d'une section de forum particulière, vous devriez l'adresser au modérateur du forum.</p>
-          <p>Les admins et les modérateurs du forum se réservent le droit de déplacer, fermer ou détruire tout post qui le nécessiterait ou qui ne 
-          présenterait pas un sujet utile et clair. De nombreux membres utilisent encore des modems 56K ou moindre et qui n'ont pas de temps à perdre
-          avec des sujets inutiles et dépourvus de sens.</p>
-          <p>Tout personne qui poste juste pour augmenter ses stats de forumeur, s'expose à voir ses sujets fermés, supprimés voire à avoir son pseudo
-          supprimé.</p>
-          <p>Essyez de faire en sorte que le sujet reflète ce qu'il y a dans la discussion. Les sujets du type "Regrdez cela !" attirent seulement des 
-          membres vers un sujet qu'ils ne souhaitent peut-être pas lire...
+	    Les modï¿½rateurs controlent les forums. Ils peuvent, ï¿½diter, supprimer, verrouiller ou dï¿½placer tout post dans leurs sections.
+            Si vous avez une question ï¿½ propos d'une section de forum particuliï¿½re, vous devriez l'adresser au modï¿½rateur du forum.</p>
+          <p>Les admins et les modï¿½rateurs du forum se rï¿½servent le droit de dï¿½placer, fermer ou dï¿½truire tout post qui le nï¿½cessiterait ou qui ne 
+          prï¿½senterait pas un sujet utile et clair. De nombreux membres utilisent encore des modems 56K ou moindre et qui n'ont pas de temps ï¿½ perdre
+          avec des sujets inutiles et dï¿½pourvus de sens.</p>
+          <p>Tout personne qui poste juste pour augmenter ses stats de forumeur, s'expose ï¿½ voir ses sujets fermï¿½s, supprimï¿½s voire ï¿½ avoir son pseudo
+          supprimï¿½.</p>
+          <p>Essyez de faire en sorte que le sujet reflï¿½te ce qu'il y a dans la discussion. Les sujets du type "Regrdez cela !" attirent seulement des 
+          membres vers un sujet qu'ils ne souhaitent peut-ï¿½tre pas lire...
           </font></p>
         </td>
     </tr>
@@ -392,9 +392,9 @@ les crochets et le texte auquel vous appliquez le code.
     <tr bgcolor="<?php echo $color2?>">
         <td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	Vous pouvez facilement modifier toute information stockée dans votre profil d'inscription en utilisant le lien	&quot;Votre profil&quot; 
-	situé en haut à droite de chaque page. Identifiez vous tout simplement avec votre Nom d'utilisateur et Mot de passe et toutes vos informations
-	de profil apparaitront alors, avec la possibilité de les modifier.
+	Vous pouvez facilement modifier toute information stockï¿½e dans votre profil d'inscription en utilisant le lien	&quot;Votre profil&quot; 
+	situï¿½ en haut ï¿½ droite de chaque page. Identifiez vous tout simplement avec votre Nom d'utilisateur et Mot de passe et toutes vos informations
+	de profil apparaitront alors, avec la possibilitï¿½ de les modifier.
 	</font>
 	</td>
     </tr>
@@ -402,19 +402,19 @@ les crochets et le texte auquel vous appliquez le code.
         <td>
 	<a name="prefs">
 	<font color="<?php echo $textcolor?>" size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>">
-	<b>Customiser le forum : utiliser les préférences</b></font></a>
+	<b>Customiser le forum : utiliser les prï¿½fï¿½rences</b></font></a>
 	</td>
     </tr>
     <tr bgcolor="<?php echo $color2?>">
         <td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
 	En tant que membre inscrit de ce forum, vous pouvez stocker votre nom d'utilisateur pour au maximum 1 an.
-	Ce faisant, le forum a la possibilité de savoir qui vous êtes quand vous visitez le forum et de plus vous pouvez customiser l'allure du forum
-	en sélectionnant un des thèmes de couleurs disponible.
-	D'autre part, si l'administrateur l'autorise, vous pouvez avoir la possibilité de créer de nouveaux thèmes pour le forum. 
-	En créant un nouveau thème, vous aurez la possibilité de choisir les couleurs de fond, polices et tailles des textes, mais seul l'administrateur 
-	peut modifier les images pour chaque thème. Lorsqu'un utilisateur crée un thème, les images par défaut du forum sont celles utilisées.
-	<br>*NB : pour pouvoir utiliser les thèmes, vous devez avoir validé les cookies dans votre navigateur.</font>
+	Ce faisant, le forum a la possibilitï¿½ de savoir qui vous ï¿½tes quand vous visitez le forum et de plus vous pouvez customiser l'allure du forum
+	en sï¿½lectionnant un des thï¿½mes de couleurs disponible.
+	D'autre part, si l'administrateur l'autorise, vous pouvez avoir la possibilitï¿½ de crï¿½er de nouveaux thï¿½mes pour le forum. 
+	En crï¿½ant un nouveau thï¿½me, vous aurez la possibilitï¿½ de choisir les couleurs de fond, polices et tailles des textes, mais seul l'administrateur 
+	peut modifier les images pour chaque thï¿½me. Lorsqu'un utilisateur crï¿½e un thï¿½me, les images par dï¿½faut du forum sont celles utilisï¿½es.
+	<br>*NB : pour pouvoir utiliser les thï¿½mes, vous devez avoir validï¿½ les cookies dans votre navigateur.</font>
 	</td>
     </tr>
     <tr bgcolor="<?php echo $color1?>">
@@ -425,10 +425,10 @@ les crochets et le texte auquel vous appliquez le code.
     <tr bgcolor="<?php echo $color2?>">
         <td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	Ce forum utilise les cookies pour stocker les informations suivantes : la dernière fois que vous avez visité le forum, votre nom d'utilisateur, et 
-	un n° de session unique lorsque vous vous identifiez au forum. Ces cookies sont stockées dans votre navigateur. Si votre navigateur ne supporte pas
-	les cookies, ou que vous ne les avez pas autorisés, aucune de ces fonctionnalités liées à la datation ne pourra fonctionner correctement mais le 
-	forum restera tout à fait utilisable.
+	Ce forum utilise les cookies pour stocker les informations suivantes : la derniï¿½re fois que vous avez visitï¿½ le forum, votre nom d'utilisateur, et 
+	un nï¿½ de session unique lorsque vous vous identifiez au forum. Ces cookies sont stockï¿½es dans votre navigateur. Si votre navigateur ne supporte pas
+	les cookies, ou que vous ne les avez pas autorisï¿½s, aucune de ces fonctionnalitï¿½s liï¿½es ï¿½ la datation ne pourra fonctionner correctement mais le 
+	forum restera tout ï¿½ fait utilisable.
 	</font>
 	</td>
     </tr>
@@ -441,10 +441,10 @@ les crochets et le texte auquel vous appliquez le code.
     <tr bgcolor="<?php echo $color2?>">
         <td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	Vous pouvez éditer vos propres posts n'importe quand. Allez simplement à la discussion où le post à éditer se trouve et vous verrez un petit icône 
-	d'édition sous votre message. Cliquez dessus et éditez votre post. Personne d'autre ne peut éditer votre post, excepté les modérateurs du forum ou.
-	D'autre part, dans la demi-heure qui suit l'envoi initial d'un post, l'écran d'édition vous donnera la possibilité de détruire votre message. Passé
-	cette période, seul un modérateur pourra enlever ce post.
+	Vous pouvez ï¿½diter vos propres posts n'importe quand. Allez simplement ï¿½ la discussion oï¿½ le post ï¿½ ï¿½diter se trouve et vous verrez un petit icï¿½ne 
+	d'ï¿½dition sous votre message. Cliquez dessus et ï¿½ditez votre post. Personne d'autre ne peut ï¿½diter votre post, exceptï¿½ les modï¿½rateurs du forum ou.
+	D'autre part, dans la demi-heure qui suit l'envoi initial d'un post, l'ï¿½cran d'ï¿½dition vous donnera la possibilitï¿½ de dï¿½truire votre message. Passï¿½
+	cette pï¿½riode, seul un modï¿½rateur pourra enlever ce post.
 	</font>
 	</td>
     </tr>
@@ -457,14 +457,14 @@ les crochets et le texte auquel vous appliquez le code.
     <tr bgcolor="<?php echo $color2?>">
         <td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	Vous pouvez utiliser une signature à vos posts. Si vous cliquez sur le lien "votre profil", visible au sommet de la plupart des pages,
-        vous pourrez éditer votre profil, y compris votre signature par défaut. Une fois que vous y avez défini une signature, vous pouvez choisir de l'inclure
-        dans tout post que vous faites en cochant la case &quot;Insérer votre signature&quot; au momment de la création de votre post.
-        L'administrateur de ce forum peut néanmoins décider de supprimer cette possibilité à tout moment. Si ceci est le cas, l'option 
-        &quot;Insérer votre signature&quot; sera sans effet, même si vous avez effectivement bien défini une signature dans votre profil.
-	Notez que vous pouvez modifier votre signature à tout moment dans la section "votre profil".
+	Vous pouvez utiliser une signature ï¿½ vos posts. Si vous cliquez sur le lien "votre profil", visible au sommet de la plupart des pages,
+        vous pourrez ï¿½diter votre profil, y compris votre signature par dï¿½faut. Une fois que vous y avez dï¿½fini une signature, vous pouvez choisir de l'inclure
+        dans tout post que vous faites en cochant la case &quot;Insï¿½rer votre signature&quot; au momment de la crï¿½ation de votre post.
+        L'administrateur de ce forum peut nï¿½anmoins dï¿½cider de supprimer cette possibilitï¿½ ï¿½ tout moment. Si ceci est le cas, l'option 
+        &quot;Insï¿½rer votre signature&quot; sera sans effet, mï¿½me si vous avez effectivement bien dï¿½fini une signature dans votre profil.
+	Notez que vous pouvez modifier votre signature ï¿½ tout moment dans la section "votre profil".
 	
-	<p>NB : vous pouvez utiliser du  HTML ou du <a href="#bbcode">code BB</a> si l'administrateur a validé ces options.
+	<p>NB : vous pouvez utiliser du  HTML ou du <a href="#bbcode">code BB</a> si l'administrateur a validï¿½ ces options.
 	    </font>
         </p>
         </td>
@@ -473,29 +473,29 @@ les crochets et le texte auquel vous appliquez le code.
         <td>
 	<a name="attach">
 	<font color="<?php echo $textcolor?>" size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>">
-	<b>Joindre des documents attachés</b></font></a>
+	<b>Joindre des documents attachï¿½s</b></font></a>
 	</td>
     </tr>
     <tr bgcolor="<?php echo $color2?>">
         <td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	Pour des raisons de sécurité, vous ne pouvez pas joindre des documents attachés, à vos posts. Vous pouvez cependant faire un copier/coller
-	du texte dans votre post ou encore utiliser du code HTML ou BB pour fournir des liens vers des documents externes. Les documents attachés 
-	seront inclus dans une version future de phpBB. (NDT : phpBB 2.0 sûrement)</font>
+	Pour des raisons de sï¿½curitï¿½, vous ne pouvez pas joindre des documents attachï¿½s, ï¿½ vos posts. Vous pouvez cependant faire un copier/coller
+	du texte dans votre post ou encore utiliser du code HTML ou BB pour fournir des liens vers des documents externes. Les documents attachï¿½s 
+	seront inclus dans une version future de phpBB. (NDT : phpBB 2.0 sï¿½rement)</font>
 	</td>
     </tr>
     <tr bgcolor="<?php echo $color1?>">
         <td>
 	<a name="search">
 	<font color="<?php echo $textcolor?>" size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>">
-	<b>Rechercher des posts spécifiques</b></font></a>
+	<b>Rechercher des posts spï¿½cifiques</b></font></a>
 	</td>
     </tr>
     <tr bgcolor="<?php echo $color2?>">
         <td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	Vous pouvez chercher des posts spécifiques à partir d'un ou plusieurs mots, d'un nom d'utilisateur, d'une date, et/ou d'un forum particulier. 
-	Cliquez juste sur le lien &quot;Rechercher&quot; visible en haut à droire de la majorité des pages.</font>
+	Vous pouvez chercher des posts spï¿½cifiques ï¿½ partir d'un ou plusieurs mots, d'un nom d'utilisateur, d'une date, et/ou d'un forum particulier. 
+	Cliquez juste sur le lien &quot;Rechercher&quot; visible en haut ï¿½ droire de la majoritï¿½ des pages.</font>
 	</td>
     </tr>
     <tr bgcolor="<?php echo $color1?>">
@@ -508,9 +508,9 @@ les crochets et le texte auquel vous appliquez le code.
     <tr bgcolor="<?php echo $color2?>">
         <td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	Les "Announcements" n'ont pas été implémentés, mais il est prévu de le faire dans une prochaine version de phpBB
-	Cependant, l'administrateur peut créer un forum ou seuls les autres adminsitrateurs et modérateurs peuvent poster.
-	Ce type de forum peut facilement être utilisé comme un forum d'"Announcements".
+	Les "Announcements" n'ont pas ï¿½tï¿½ implï¿½mentï¿½s, mais il est prï¿½vu de le faire dans une prochaine version de phpBB
+	Cependant, l'administrateur peut crï¿½er un forum ou seuls les autres adminsitrateurs et modï¿½rateurs peuvent poster.
+	Ce type de forum peut facilement ï¿½tre utilisï¿½ comme un forum d'"Announcements".
  	</td>
     </tr>
     <tr bgcolor="<?php echo $color1?>">
@@ -523,9 +523,9 @@ les crochets et le texte auquel vous appliquez le code.
     <tr bgcolor="<?php echo $color2?>">
         <td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
- 	Au cas où vous perdriez votre mot de passe, vous pouvez cliquer sur le lien &quot;J'ai perdu mon mot de passe!&quot; visible 
- 	au moment des identifications. Ce lien vous amènera sur une page où vous pourrez remplir votre Nom d'utilisateur et votre adresse e-mail.
-	Le système vous enverra alors un nouveau mot de passe généré aléatoirement à l'adresse email inscrite dans votre profil, en supposant que vous aviez
+ 	Au cas oï¿½ vous perdriez votre mot de passe, vous pouvez cliquer sur le lien &quot;J'ai perdu mon mot de passe!&quot; visible 
+ 	au moment des identifications. Ce lien vous amï¿½nera sur une page oï¿½ vous pourrez remplir votre Nom d'utilisateur et votre adresse e-mail.
+	Le systï¿½me vous enverra alors un nouveau mot de passe gï¿½nï¿½rï¿½ alï¿½atoirement ï¿½ l'adresse email inscrite dans votre profil, en supposant que vous aviez
 	fourni une adresse email correcte.
 	</FONT>
 	</td>
@@ -540,9 +540,9 @@ les crochets et le texte auquel vous appliquez le code.
     <tr bgcolor="<?php echo $color2?>">
         <td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	Lorsque vous créez un nouveau sujet, vous avez la possibilité de recevoir un email de notification
-	à chaque fois que quelqu'un poste une réponse à ce sujet. Cochez juste la case de notification par email lorsque vous créez un nouveau sujet si vous 
-	souhaitez utiliser cette fonctionnalité.
+	Lorsque vous crï¿½ez un nouveau sujet, vous avez la possibilitï¿½ de recevoir un email de notification
+	ï¿½ chaque fois que quelqu'un poste une rï¿½ponse ï¿½ ce sujet. Cochez juste la case de notification par email lorsque vous crï¿½ez un nouveau sujet si vous 
+	souhaitez utiliser cette fonctionnalitï¿½.
         </font>
 	</td>
     </tr>
@@ -550,13 +550,13 @@ les crochets et le texte auquel vous appliquez le code.
         <td>
 	<a name="searchprivate">
 	<font color="<?php echo $textcolor?>" size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>">
-	<b>Puis chercher dans les forums privés ?</b>
+	<b>Puis chercher dans les forums privï¿½s ?</b>
 	</td>
     </tr>
     <tr bgcolor="<?php echo $color2?>">
         <td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	Oui, mais vous ne pouvez pas lire les posts, à moins que vous n'ayez le mot de passe à ce(s) forum(s) privé(s). </font></p>
+	Oui, mais vous ne pouvez pas lire les posts, ï¿½ moins que vous n'ayez le mot de passe ï¿½ ce(s) forum(s) privï¿½(s). </font></p>
         </td>
     </tr>
     <tr bgcolor="<?php echo $color1?>">
@@ -569,7 +569,7 @@ les crochets et le texte auquel vous appliquez le code.
     <tr bgcolor="<?php echo $color2?>">
         <td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	The <?php echo $sitename?> Les forums établissent des méthodes pour classer leur utilisateurs à travers leur nombre de posts.</p>
+	The <?php echo $sitename?> Les forums ï¿½tablissent des mï¿½thodes pour classer leur utilisateurs ï¿½ travers leur nombre de posts.</p>
 	<br>
 	Les rangs actuels sont :<br>
 
@@ -577,7 +577,7 @@ les crochets et le texte auquel vous appliquez le code.
 	$sql = "SELECT * FROM ranks WHERE rank_special = 0";
 	if(!$r = mysql_query($sql, $db)) {
 	echo "Error connecting to the database";
-	include('page_tail.'.$phpEx);
+	include('page_tail.php');
 	exit();
 	}
 	?>
@@ -587,7 +587,7 @@ les crochets et le texte auquel vous appliquez le code.
 	<TD><font face="<?php echo $FontFace?>" size="<?php echo $FontSize2?>" color="<?php echo $textcolor?>">&nbsp;Titre du rang &nbsp;</font></TD>
 	<TD><font face="<?php echo $FontFace?>" size="<?php echo $FontSize2?>" color="<?php echo $textcolor?>">&nbsp;Minimum de posts&nbsp;</font></TD>
 	<TD><font face="<?php echo $FontFace?>" size="<?php echo $FontSize2?>" color="<?php echo $textcolor?>">&nbsp;Maximum de posts&nbsp;</font></TD>
-        <TD><font face="<?php echo $FontFace?>" size="<?php echo $FontSize2?>" color="<?php echo $textcolor?>">&nbsp;Image associée au rang&nbsp;</font></TD>
+        <TD><font face="<?php echo $FontFace?>" size="<?php echo $FontSize2?>" color="<?php echo $textcolor?>">&nbsp;Image associï¿½e au rang&nbsp;</font></TD>
 	</TR>
 	<?php
 	if($m = mysql_fetch_array($r)) {
@@ -605,15 +605,15 @@ les crochets et le texte auquel vous appliquez le code.
 	}
 	else {
 	echo "<TR BGCOLOR=\"$color2\" ALIGN=\"CENTER\">";
-	echo "<TD COLSPAN=\"4\">Pas de rangs dans la base de données</TD>";
+	echo "<TD COLSPAN=\"4\">Pas de rangs dans la base de donnï¿½es</TD>";
 	echo "</TR>";
 	}
 	?>
 	</TABLE></TABLE></font>
 	<br>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	Les administrateurs ont aussi la possibilité d'assigner un rang spécial à tout utilisateur de leur choix. La table ci-dessus ne liste 
-	pas ces rangs spéciaux.
+	Les administrateurs ont aussi la possibilitï¿½ d'assigner un rang spï¿½cial ï¿½ tout utilisateur de leur choix. La table ci-dessus ne liste 
+	pas ces rangs spï¿½ciaux.
 	</font>
         </td>
     </tr>
@@ -624,7 +624,7 @@ les crochets et le texte auquel vous appliquez le code.
 	<b>Pourquoi certains icones de posts sont-ils </b>
 	</font>
 	<font color="#FF0033" size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>">
-	<b>enflammés ?</b>
+	<b>enflammï¿½s ?</b>
 	</font>
 	<font color="<?php echo $textcolor?>" size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>">
 	<b> in the forum view?</b></font></a>
@@ -633,8 +633,8 @@ les crochets et le texte auquel vous appliquez le code.
     <tr bgcolor="<?php echo $color2?>">
         <td>
 	<font size="<?php echo $FontSize2?>" face="<?php echo $FontFace?>" color="<?php echo $textcolor?>">
-	Les icônes enflammés sont là pour indiquer qu'il y a plus de <?php echo $hot_threshold?> post dans cette discussion. Il s'agit aussi d'un indicateur
-	qui prévient les utilisateurs de connexion "lentes" que la discussion peut prendre un peu de temps à se charger.</font></p>
+	Les icï¿½nes enflammï¿½s sont lï¿½ pour indiquer qu'il y a plus de <?php echo $hot_threshold?> post dans cette discussion. Il s'agit aussi d'un indicateur
+	qui prï¿½vient les utilisateurs de connexion "lentes" que la discussion peut prendre un peu de temps ï¿½ se charger.</font></p>
         </td>
     </tr>
 </table>
@@ -643,5 +643,5 @@ les crochets et le texte auquel vous appliquez le code.
 </div>
 
 <?php
-include('page_tail.'.$phpEx);
+include('page_tail.php');
 ?>

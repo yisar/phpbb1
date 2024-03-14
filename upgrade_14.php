@@ -19,7 +19,7 @@
  *
  ***************************************************************************/
 
-include('extention.inc');
+
 include('config.'.$phpEx);
 include('functions.'.$phpEx);
 include('auth.'.$phpEx);

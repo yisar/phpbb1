@@ -33,10 +33,10 @@
 *    Added pagination
 *       - James
 */
-include('extention.inc');
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = "Members List";
 $pagetype = "other";
 include('page_header.' . $phpEx);
@@ -239,5 +239,5 @@ echo "<BR>\n";
   
   
 <?php
-include('page_tail.'.$phpEx);
+include('page_tail.php');
 ?>

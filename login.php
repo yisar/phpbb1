@@ -23,7 +23,7 @@
  * login.php - Nathan Codding
  * - Used for logging in a user and setting up a session.
  */
-include('extention.inc');
+
 include('functions.'.$phpEx);
 include('config.'.$phpEx);
 require('auth.'.$phpEx);

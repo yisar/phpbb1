@@ -18,10 +18,10 @@
  *   (at your option) any later version.
  *
  ***************************************************************************/
-include('extention.inc');
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = $l_profile;
 $pagetype = "Edit Profile";
 
@@ -29,7 +29,7 @@ $pagetype = "Edit Profile";
 if($mode) {
 	switch($mode) {
 	 case 'view':
-	   include('page_header.'.$phpEx);
+	   include('page_header.php');
 	   $userdata = get_userdata_from_id($user, $db);
 	   $total_posts = get_total_posts("0", $db, "all");
 	   if($userdata[user_posts] != 0 && $total_posts != 0){
@@ -140,18 +140,18 @@ if($mode) {
 		    error_die($l_nouser);
 		 }
 		 if ($password == '') {
-		    include('page_header.'.$phpEx);
+		    include('page_header.php');
 		    error_die("$l_enterpassword $l_tryagain");
 		 }
 		 $md_pass = md5($password);
 		 if ($md_pass != $userdata[user_password]) {
-		    include('page_header.'.$phpEx);
+		    include('page_header.php');
 		    error_die("$l_wrongpass $l_tryagain");
 		 }
 
 		 if ($new_password != '') {
 		    if ($new_password != $password2)  {
-		       include('page_header.'.$phpEx);
+		       include('page_header.php');
 		       error_die("$l_mismatch $l_tryagain");
 		    }
 		    $md_pass = md5($new_password);
@@ -165,7 +165,7 @@ if($mode) {
 		       error_die("$l_usertaken $l_tryagain");
 		    }
 		    if(validate_username($user_name, $db) == 1) {
-		       include('page_header.'.$phpEx);
+		       include('page_header.php');
 		       error_die("$l_userdisallowed $l_tryagain");
 		    }
 		    $new_name = 1;
@@ -212,7 +212,7 @@ if($mode) {
 		 // They have authed, log them in.
 		 $sessid = new_session($userdata[user_id], $REMOTE_ADDR, $sesscookietime, $db);
 		 set_session_cookie($sessid, $sesscookietime, $sesscookiename, $cookiepath, $cookiedomain, $cookiesecure);
-		 include('page_header.'.$phpEx);
+		 include('page_header.php');
 		 echo "$l_infoupdated.<br>$l_click <a href=\"index.$phpEx\">$l_here</a> $l_returnindex.";
 	      } else {
 		 // not trying to save, so show the form.
@@ -232,7 +232,7 @@ if($mode) {
 		    $sessid = new_session($userdata[user_id], $REMOTE_ADDR, $sesscookietime, $db);
 		    set_session_cookie($sessid, $sesscookietime, $sesscookiename, $cookiepath, $cookiedomain, $cookiesecure);
 		 }
-		 include('page_header.'.$phpEx);
+		 include('page_header.php');
 ?>
 	<FORM ACTION="<?php echo $PHP_SELF?>" METHOD="POST">
 	<TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="<?php echo $TableWidth?>">
@@ -334,7 +334,7 @@ if($mode) {
 		} else {
 			// no valid session, and they haven't submitted.
 			// so, we need to get a user/pass.
-	      include('page_header.'.$phpEx);
+	      include('page_header.php');
 			login_form();
 		}
 	break;
@@ -344,5 +344,5 @@ if($mode) {
 } // if ($mode)
 ?>
 <?php
-include('page_tail.'.$phpEx);
+include('page_tail.php');
 ?>

@@ -23,13 +23,13 @@
  * viewpmsg.$phpEx - Nathan Codding
  * - Used for receiving private messages between users of the BB.
  */
-include('extention.inc');
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = "Private Messages";
 $pagetype = "privmsgs";
-include('page_header.'.$phpEx);
+include('page_header.php');
 
 if (!$submit && !$user_logged_in) {
 	login_form();
@@ -135,5 +135,5 @@ if (!$submit && !$user_logged_in) {
 
 } // if/else
 
-require('page_tail.'.$phpEx);
+require('page_tail.php');
 ?>

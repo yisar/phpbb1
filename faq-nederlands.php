@@ -22,13 +22,13 @@
  * Created by: Steven Cunningham (defender@webinfractions.com) for phpBB
  * Translated by: los3r
  * *************************************************************************/
-include('extention.inc');
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = "FAQ";
 $pagetype = "other";
-include('page_header.'.$phpEx);
+include('page_header.php');
 ?>
 
 <div align="center"><center>
@@ -543,7 +543,7 @@ de tekst die je opmaakt.
 	$sql = "SELECT * FROM ranks WHERE rank_special = 0";
 	if(!$r = mysql_query($sql, $db)) {
 	echo "Error connecting to the database";
-	include('page_tail.'.$phpEx);
+	include('page_tail.php');
 	exit();
 	}
 	?>
@@ -611,5 +611,5 @@ de tekst die je opmaakt.
 </div>
 
 <?php
-include('page_tail.'.$phpEx);
+include('page_tail.php');
 ?>

@@ -18,10 +18,10 @@
  *   (at your option) any later version.
  *
  ***************************************************************************/
-include('../extention.inc');
-include('../functions.'.$phpEx);
-include('../config.'.$phpEx);
-require('../auth.'.$phpEx);
+
+include('../functions.php');
+include('../config.php');
+require('../auth.php');
 
 if($login) {
       if ($username == '') {
@@ -53,7 +53,7 @@ if($login) {
 else if(!$user_logged_in) {
       $pagetitle = "Forum Administration";
       $pagetype = "admin";
-      include('../page_header.'.$phpEx);
+      include('../page_header.php');
 
    ?>
           <TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="<?php echo $TableWidth?>">
@@ -71,14 +71,14 @@ else if(!$user_logged_in) {
           </FORM>
           </TD></TR></TABLE></TD></TR></TABLE>
      <?php
-          include('../page_tail.'.$phpEx);
+          include('../page_tail.php');
         exit();
 }
 else if($user_logged_in && $userdata[user_level] == 4) {
 
 $pagetitle = "Forum Administration";
 $pagetype = "admin";
-include('../page_header.'.$phpEx);
+include('../page_header.php');
 
 switch($mode) {
 	case 'moduser':
@@ -283,7 +283,7 @@ switch($mode) {
      $sql = "SELECT * FROM words";
    if(!$r = mysql_query($sql, $db)) {
       echo "<TD ALIGN=\"CENTER\" COLSPAN=\"6\"><FONT FACE=\"$FontFace\" SIZE=\"$FontSize\" COLOR=\"$textcolor\">Error connecting to the database.</FONT></TD></TR></TABLE></TABLE>";
-      include('../page_tail.'.$phpEx);
+      include('../page_tail.php');
       exit();
    }
    if($m = mysql_fetch_array($r)) {
@@ -364,7 +364,7 @@ switch($mode) {
 	$sql = "SELECT disallow_id, disallow_username FROM disallow";
 	if(!$r = mysql_query($sql, $db)) {
 		echo "<TR BGCOLOR=\"$color1\" ALIGN=\"LEFT\"><TD COLSPAN=\"3\">Error - Could not query the database. Please check your config.$phpEx file.</TD></TR></TABLE></TABLE>";
-		include('../page_tail.'.$phpEx);
+		include('../page_tail.php');
 		exit();
 	}
 	if($m = mysql_fetch_array($r)) {
@@ -402,7 +402,7 @@ switch($mode) {
 		      $deluserdata = get_userdata_from_id($user_id, $db);
 		      if($deluserdata[user_posts] > 0) {
 			 echo "Error. This use has posted messages on the forums, therefor he/she cannot be hard deleted. Please go back and 'soft delete' this user if you want to remove them.";
-			 include('../page_tail.'.$phpEx);
+			 include('../page_tail.php');
 			 exit();
 		      }
 		      $sql = "DELETE FROM users WHERE user_id = '$user_id'";
@@ -411,13 +411,13 @@ switch($mode) {
 		     $sql = "UPDATE users SET user_level = -1 WHERE user_id = '$user_id'";
 		   if(!$r = mysql_query($sql, $db)) {
 		      echo "Error - Could not remove user from the database.";
-		      include('../page_tail.'.$phpEx);
+		      include('../page_tail.php');
 		      exit();
 		   }
 		   $sql = "DELETE FROM forum_mods WHERE user_id = '$user_id'";
 		   if(!$r = mysql_query($sql, $db)) {
 		      echo "Error - Could not remove user from the database.";
-		      include('../page_tail.'.$phpEx);
+		      include('../page_tail.php');
 		      exit();
 		   }
 		   echo "<TABLE width=\"95%\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" bordercolor=\"$table_bgcolor\">";
@@ -750,7 +750,7 @@ else {
       $pagetype = "admin";
       $pagetitle = "Access Denied!";
 
-      include('../page_header.'.$phpEx);
+      include('../page_header.php');
    ?>
           <TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="<?php echo $TableWidth?>">
           <TR><TD  BGCOLOR="<?php echo $table_bgcolor?>">
@@ -764,5 +764,5 @@ else {
 }
 
 
-include('../page_tail.'.$phpEx);
+include('../page_tail.php');
 ?>

@@ -25,10 +25,10 @@
 * 09/13/2000 - John B. Abela (abela@4cm.com)
 * 	Added Some Cosmetic HTML Code, fixed a Hyperlink typo.
 */
-include('../extention.inc');
-include('../functions.'.$phpEx);
-include('../config.'.$phpEx);
-require('../auth.'.$phpEx);
+
+include('../functions.php');
+include('../config.php');
+require('../auth.php');
 
 if($login) {
       if ($username == '') {
@@ -60,7 +60,7 @@ if($login) {
 else if(!$user_logged_in) {
       $pagetitle = "Forum Administration";
       $pagetype = "admin";
-      include('../page_header.'.$phpEx);
+      include('../page_header.php');
 
    ?>
      <TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="<?php echo $TableWidth?>">
@@ -78,14 +78,14 @@ else if(!$user_logged_in) {
      </FORM>
      </TD></TR></TABLE></TD></TR></TABLE>
      <?php
-          include('../page_tail.'.$phpEx);
+          include('../page_tail.php');
         exit();
 }
 else if($user_logged_in && $userdata[user_level] == 4) {
 
 $pagetitle = "Forum Administration";
 $pagetype = "admin";
-include('../page_header.'.$phpEx);
+include('../page_header.php');
 
 switch($mode) {
  case 'editforum':
@@ -196,7 +196,7 @@ switch($mode) {
 	die("Error connecting to the database.");
       if(!$myrow = mysql_fetch_array($result)) {
 	 echo "No such forum";
-	 include('page_tail.'.$phpEx);
+	 include('page_tail.php');
       }
       $name = stripslashes($myrow[forum_name]);
       $desc = stripslashes($myrow[forum_desc]);
@@ -757,7 +757,7 @@ else {
       $pagetype = "admin";
       $pagetitle = "Access Denied!";
 
-      include('../page_header.'.$phpEx);
+      include('../page_header.php');
    ?>
           <TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="<?php echo $TableWidth?>">
           <TR><TD  BGCOLOR="<?php echo $table_bgcolor?>">
@@ -770,5 +770,5 @@ else {
      <?php
 }
 
-include('../page_tail.'.$phpEx);
+include('../page_tail.php');
 ?>

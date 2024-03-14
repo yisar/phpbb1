@@ -18,10 +18,10 @@
  *   (at your option) any later version.
  *
  ***************************************************************************/
-include('extention.inc');
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = $l_register;
 $pagetype = "Register";
 
@@ -36,21 +36,21 @@ if($submit) {
 	$username = addslashes($username);
 
    if(trim($password) == '' || trim($username) == '' || trim($email) == '') {
-      include('page_header.'.$phpEx);
+      include('page_header.php');
       error_die("$l_notfilledin $l_tryagain");
    }
    
    if (check_username($username, $db)) {                            
-      include('page_header.'.$phpEx);
+      include('page_header.php');
       error_die("$l_invalidname $l_tryagain");
    }      
    if(validate_username($username, $db) == 1) {
-     include('page_header.'.$phpEx);
+     include('page_header.php');
      error_die("$l_disallowname $l_tryagain");
    }
    
    if($password != $password_rep) {
-      include('page_header.'.$phpEx);
+      include('page_header.php');
       error_die($l_mismatch);
    }
   
@@ -99,7 +99,7 @@ if($submit) {
 				VALUES ('$total', '$username', '$regdate', '$email', '$icq', '$passwd', '$occ', '$intrest', '$from', '$website', '$sig', '$aim', '$sqlviewemail', '$yim', '$msnm')";
 
    if(!$result = mysql_query($sql, $db)) {
-      include('page_header.'.$phpEx);
+      include('page_header.php');
       die("An Error Occured while trying to add the information into the database. Please go back and try again. <BR>$sql<BR>$mysql_error()");
    }
 
@@ -107,7 +107,7 @@ if($submit) {
       $time = (time() + 3600 * 24 * 30 * 12);
       setcookie($cookiename, $total, $time, $cookiepath, $cookiedomain, $cookiesecure);
    }
-   include('page_header.'.$phpEx);
+   include('page_header.php');
    
    $message = "Welcome to $sitename forums!\nPlease keep this email for your records!\n\n";
    $message  .= "Your account information is as follows:\n";
@@ -122,7 +122,7 @@ if($submit) {
    echo "<p>$l_beenadded<p>$l_click <a href=\"$url_phpbb/index.$phpEx\">$l_here</a> $l_returnindex<br>$l_thankregister<p><br>";
 }
 else {
-   include('page_header.'.$phpEx);
+   include('page_header.php');
    ?>
 	<FORM ACTION="<?php echo $PHP_SELF?>" METHOD="POST">
 	<TABLE BORDER="0" WIDTH="<?php echo $TableWidth?>" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP"><TR><TD  BGCOLOR="<?php echo $table_bgcolor?>">
@@ -199,5 +199,5 @@ else {
 	</FORM>
 <?php
 }
-require('page_tail.'.$phpEx);
+require('page_tail.php');
 ?>

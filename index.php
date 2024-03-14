@@ -18,7 +18,7 @@
  *   (at your option) any later version.
  *
  ***************************************************************************/
-include('extention.inc');
+
 include('functions.'.$phpEx);
 include('config.'.$phpEx);
 require("auth.$phpEx");

@@ -22,9 +22,9 @@
 error_reporting(E_ERROR | E_WARNING | E_PARSE); // This will NOT report uninitialized variables
 
 if (strpos(' ' . $PATH_INFO, $url_admin)) {
-	include("../fix.$phpEx");
+	include("../fix.php");
 } else {
-	include("fix.$phpEx");
+	include("fix.php");
 }
 
 // Disable Magic Quotes
@@ -60,7 +60,7 @@ if (true) {
 }
 
 // Check if the config file is writable (shouldn't be!!)
-$config_file_name = "config.$phpEx";
+$config_file_name = "config.php";
 if (strstr($PHP_SELF, "admin")) {
 	if (!strstr($PHP_SELF, "topicadmin")) {
 		$config_file_name = "../config.$phpEx";

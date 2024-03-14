@@ -18,10 +18,10 @@
  *   (at your option) any later version.
  *
  ***************************************************************************/
-include('extention.inc');
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = "Edit Post";
 $pagetype = "index";
 
@@ -29,7 +29,7 @@ if($submit) {
    $sql = "SELECT * FROM posts WHERE post_id = '$post_id'";
    if (!$result = mysql_query($sql, $db)) die($err_db_retrieve_data);
    if (mysql_num_rows($result) <= 0) die($err_db_retrieve_data);
-   $myrow = mysql_fetch_array($result);
+   $myrow = mysqli_fetch_array($result);
 
    $poster_id = $myrow[poster_id];
    $forum_id = $myrow[forum_id];
@@ -46,7 +46,7 @@ if($submit) {
 	    $die = 1;
 	 }
 	 else if($userdata[user_level] == 2 && !is_moderator($forum_id, $userdata[user_id], $db)) {
-	    include('page_header.'.$phpEx);
+	    include('page_header.php');
 	    error_die($l_notedit);
 	 }
       }
@@ -154,7 +154,7 @@ if($submit) {
 			error_die($l_permdeny);
 		}
 
-      include('page_header.'.$phpEx);
+      include('page_header.php');
       $last_post_in_thread = get_last_post($topic_id, $db, "time_fix");
 
       $sql = "DELETE FROM posts WHERE post_id = '$post_id'";
@@ -210,7 +210,7 @@ else {
 	{
 		error_die("Couldn't get forum and topic information from the database.");
 	}
-	if(!$myrow = mysql_fetch_array($result))
+	if(!$myrow = mysqli_fetch_array($result))
 	{
 		error_die("Error - The forum/topic you selected does not exist. Please go back and try again.");
 	}
@@ -218,7 +218,7 @@ else {
 	if(($myrow[forum_type] == 1) && !$user_logged_in && !$logging_in) 
 	{
 		// Private forum, no valid session, and login form not submitted...
-		require('page_header.'.$phpEx);
+		require('page_header.php');
 ?>
 <FORM ACTION="<?php echo $PHP_SELF?>" METHOD="POST">
 	<TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="<?php echo $tablewidth?>">
@@ -259,7 +259,7 @@ else {
 	</TABLE>
 </FORM>
 <?php
-	require('page_tail.'.$phpEx);
+	require('page_tail.php');
 	exit();
 	}
 	else 
@@ -289,7 +289,7 @@ else {
 			
 		}
 	
-		require('page_header.'.$phpEx);
+		require('page_header.php');
 		
 		if ($myrow[forum_type] == 1)
 		{
@@ -315,7 +315,7 @@ else {
    			
    if(!$result = mysql_query($sql, $db))
 		error_die("Couldn't get user and topic information from the database.<br>$sql");
-   $myrow = mysql_fetch_array($result);
+   $myrow = mysqli_fetch_array($result);
    // Freekin' ugly but I couldn't get it to work right as 1 big if 
    //          - James
    if ($user_logged_in) {
@@ -467,5 +467,5 @@ else {
 	echo "</CENTER><BR>";
 	       
 }
-include('page_tail.'.$phpEx);
+include('page_tail.php');
 ?>

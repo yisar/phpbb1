@@ -23,13 +23,13 @@
  * delpmsg.php - Nathan Codding
  * - Used for deleting private messages by users of the BB.
  */
-include('extention.inc');
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = "Private Messages";
 $pagetype = "privmsgs";
-include('page_header.'.$phpEx);
+include('page_header.php');
 
 
 if (!$submit && !$user_logged_in) {
@@ -56,7 +56,7 @@ if (!$submit && !$user_logged_in) {
 		echo mysql_error() . "<br>\n";
 		error_die("Error during DB query (checking msg ownership)");
 	}
-	$row = mysql_fetch_array($resultID);
+	$row = mysqli_fetch_array($resultID);
 	if ($userdata[user_id] != $row[to_userid]) {
 		error_die("That's not your message. You can't delete it.");
 	}
@@ -74,5 +74,5 @@ if (!$submit && !$user_logged_in) {
 
 } // if/else (if submit)
 
-require('page_tail.'.$phpEx);
+require('page_tail.php');
 ?>

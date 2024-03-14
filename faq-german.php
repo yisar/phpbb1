@@ -19,13 +19,13 @@
  *
  ***************************************************************************/
 
-include('extention.inc');
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = "FAQ";
 $pagetype = "other";
-include('page_header.'.$phpEx);
+include('page_header.php');
 ?>
 
 <div align="center"><center>
@@ -392,7 +392,7 @@ Schr&auml;gstrich / enthalten: (<FONT COLOR="#FF0000">[/email]</FONT>)
           <p>Wer nur Beitr&auml;ge schreibt, um seine / ihre Anzahl der Beitr&auml;ge zu erh&ouml;hen oder sich anders kontraproduktiv
           verh&auml;lt, kann vom Forum ausgeschlossen werden. Kritische Beitr&auml;ge sind willkommen, solange sie nicht
           pers&ouml;nlich verletzen.</p>
-          <p>†berlegen Sie sich, ob der Titel Ihres Themas passt: Titel wie "Unbedingt lesen!" usw. machen wenig Sinn.
+          <p>ï¿½berlegen Sie sich, ob der Titel Ihres Themas passt: Titel wie "Unbedingt lesen!" usw. machen wenig Sinn.
           Sagen Sie gleich kurz und pr&auml;zise, worum es in Ihrem Beitrag geht.</font></p>
         </td>
     </tr>
@@ -612,7 +612,7 @@ Schr&auml;gstrich / enthalten: (<FONT COLOR="#FF0000">[/email]</FONT>)
 	$sql = "SELECT * FROM ranks WHERE rank_special = 0";
 	if(!$r = mysql_query($sql, $db)) {
 	echo "Fehler 102 beim Zugriff auf Datenbank";
-	include('page_tail.'.$phpEx);
+	include('page_tail.php');
 	exit();
 	}
 	?>
@@ -678,5 +678,5 @@ Schr&auml;gstrich / enthalten: (<FONT COLOR="#FF0000">[/email]</FONT>)
 </div>
 
 <?php
-include('page_tail.'.$phpEx);
+include('page_tail.php');
 ?>
