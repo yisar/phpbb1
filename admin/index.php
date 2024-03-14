@@ -51,6 +51,7 @@ if($login) {
 
 }
 else if(!$user_logged_in) {
+   echo 2333;
    $pagetitle = "Forum Administration";
    $pagetype = "admin";
    include('../page_header.'.$phpEx);

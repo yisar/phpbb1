@@ -111,6 +111,7 @@ if (isset($HTTP_COOKIE_VARS[$sesscookiename])) {
 		update_session_time($sessid, $db);
 
 		$userdata = get_userdata_from_id($userid, $db);
+		echo $userdata;
 		if (is_banned($userdata[user_id], "username", $db))
 			die($l_banned);
 		$theme = setuptheme($userdata["user_theme"], $db);
@@ -147,13 +148,14 @@ if (isset($HTTP_COOKIE_VARS[$sesscookiename])) {
 // We only need to run this if the user's not logged in.
 
 if (!$user_logged_in) {
-	echo 1233;
 	if (isset($HTTP_COOKIE_VARS[$cookiename])) {
-		$userdata = get_userdata_from_id($HTTP_COOKIE_VARS["$cookiename"], $db);
-		if (is_banned($userdata[user_id], "username", $db)) {
-			die($l_banned);
-		}
-		$theme = setuptheme($userdata["user_theme"], $db);
+		echo 111;
+
+		$userdata = get_userdata_from_id($HTTP_COOKIE_VARS["$cookiename"], $conn);
+		// if (is_banned($userdata[user_id], "username", $conn)) {
+		// 	die($l_banned);
+		// }
+		$theme = setuptheme($userdata["user_theme"], $conn);
 		if ($theme) {
 			$bgcolor = $theme["bgcolor"];
 			$table_bgcolor = $theme["table_bgcolor"];
@@ -185,10 +187,10 @@ if (!$user_logged_in) {
 
 if ($override_user_themes == 1 || !$theme) {
 	$sql = "SELECT * FROM themes WHERE theme_default = 1";
-	if (!$r = mysql_query($sql, $db)) {
+	if (!$r = mysqli_query($conn, $sql)) {
 		die('<font size=+1>An Error Occured</font><hr>phpBB was unable to connect to the database. <BR>Please check $dbhost, $dbuser, and $dbpasswd in config.php.');
 	}
-	if ($theme = mysql_fetch_array($r)) {
+	if ($theme = mysqli_fetch_array($r)) {
 		$bgcolor = $theme["bgcolor"];
 		$table_bgcolor = $theme["table_bgcolor"];
 		$textcolor = $theme["textcolor"];
@@ -209,7 +211,6 @@ if ($override_user_themes == 1 || !$theme) {
 		$reply_locked_image = $theme["replylocked_image"];
 	}
 }
-
 
 // set expire dates: one for a year, one for 10 minutes
 $expiredate1 = time() + 3600 * 24 * 365;
