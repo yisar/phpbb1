@@ -68,7 +68,7 @@ if (strstr($PHP_SELF, "admin")) {
 }
 
 // Make a database connection.
-$conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname);
+$conn = mysqli_connect($dbhost, $dbuser, $dbpasswd, $dbname);
 if (!$conn) {
 	die("连接失败:" . mysqli_connect_error());
 }
@@ -147,6 +147,7 @@ if (isset($HTTP_COOKIE_VARS[$sesscookiename])) {
 // We only need to run this if the user's not logged in.
 
 if (!$user_logged_in) {
+	echo 1233;
 	if (isset($HTTP_COOKIE_VARS[$cookiename])) {
 		$userdata = get_userdata_from_id($HTTP_COOKIE_VARS["$cookiename"], $db);
 		if (is_banned($userdata[user_id], "username", $db)) {
