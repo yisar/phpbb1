@@ -39,7 +39,7 @@ include('config.php');
 require('auth.php');
 $pagetitle = "Members List";
 $pagetype = "other";
-include('page_header.' . $phpEx);
+include('page_header.' . php);
 
 if (!isset($sortby))
 {
@@ -91,7 +91,7 @@ if($all_topics > $topics_per_page)
 {
    if ($next < $all_topics)
    {
-   	echo "<font size=-1>\n<a href=\"bb_memberlist.$phpEx?start=$next&sortby=$sortlink\">$l_nextpage</a> | ";
+   	echo "<font size=-1>\n<a href=\"bb_memberlist.php?start=$next&sortby=$sortlink\">$l_nextpage</a> | ";
    }
    for($x = 0; $x < $all_topics; $x++) 
    {
@@ -100,7 +100,7 @@ if($all_topics > $topics_per_page)
 	 		if($x == $start)
 	   		echo "$count\n";
 	 		else
-	   		echo "<a href=\"bb_memberlist.$phpEx?&start=$x&sortby=$sortlink\">$count</a>\n";
+	   		echo "<a href=\"bb_memberlist.php?&start=$x&sortby=$sortlink\">$count</a>\n";
 	 		
 	 		$count++;
 	 		if(!($count % 10)) 
@@ -171,7 +171,7 @@ if (!$row) {
 			$yim = "&nbsp;";
 		}
 		if ($row[user_msnm]) {
-			$msnm = "<a href=\"$url_phpbb/bb_profile.$phpEx?mode=view&user=$row[user_id]\"><img src=\"$images_msnm\" width=\"16\" height=\"16\" border=\"0\" alt=\"MSNM $row[user_msnm]\"></a>";
+			$msnm = "<a href=\"$url_phpbb/bb_profile.php?mode=view&user=$row[user_id]\"><img src=\"$images_msnm\" width=\"16\" height=\"16\" border=\"0\" alt=\"MSNM $row[user_msnm]\"></a>";
 		} else {
 			$msnm = "&nbsp;";
 		}
@@ -182,7 +182,7 @@ if (!$row) {
 ?>
 	<TR>
 		<td bgcolor="<?php echo $color2?>" nowrap align="center"><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">&nbsp;<?php echo ++$ranking?>&nbsp;</font></TD>
-		<td bgcolor="<?php echo $color2?>" width="25%" height="30" nowrap><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">&nbsp;<a href="<?php echo $url_phpbb?>/bb_profile.<?php echo $phpEx?>?mode=view&user=<?php echo $row[user_id]?>"><?php echo $row[username]?></a></font></TD>
+		<td bgcolor="<?php echo $color2?>" width="25%" height="30" nowrap><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">&nbsp;<a href="<?php echo $url_phpbb?>/bb_profile.<?php echo php?>?mode=view&user=<?php echo $row[user_id]?>"><?php echo $row[username]?></a></font></TD>
 		<td bgcolor="<?php echo $color1?>" width="30%" height="30"><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">&nbsp;<?php echo stripslashes($row[user_from])?></font></TD>
 		<td bgcolor="<?php echo $color2?>" width="8%" height="30" nowrap align="center"><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>"> <?php echo $regdate?> </font></td>
 		<td bgcolor="<?php echo $color1?>" width="8%" height="30" nowrap align="center"><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>"> <?php echo $row[user_posts]?> </font></td>
@@ -209,7 +209,7 @@ if($all_topics > $topics_per_page)
 {
    if ($next < $all_topics)
    {
-   	echo "<font size=-1>\n<a href=\"bb_memberlist.$phpEx?start=$next&sortby=$sortlink\">$l_nextpage</a> | ";
+   	echo "<font size=-1>\n<a href=\"bb_memberlist.php?start=$next&sortby=$sortlink\">$l_nextpage</a> | ";
    }
    for($x = 0; $x < $all_topics; $x++) 
    {
@@ -218,7 +218,7 @@ if($all_topics > $topics_per_page)
 	 		if($x == $start)
 	   		echo "$count\n";
 	 		else
-	   		echo "<a href=\"bb_memberlist.$phpEx?&start=$x&sortby=$sortlink\">$count</a>\n";
+	   		echo "<a href=\"bb_memberlist.php?&start=$x&sortby=$sortlink\">$count</a>\n";
 	 		
 	 		$count++;
 	 		if(!($count % 10)) 

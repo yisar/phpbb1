@@ -53,7 +53,7 @@ for ($n = 0; $n < sizeof($fix_vars); ++$n)
 $fix_vars = array('submit', 'save');
 for ($n = 0; $n < sizeof($fix_vars); ++$n)
 {
-	if (!isset ($HTTP_POST_VARS[$fix_vars[$n]]) && !stristr($REQUEST_URI, "search.$phpEx"))
+	if (!isset ($HTTP_POST_VARS[$fix_vars[$n]]) && !stristr($REQUEST_URI, "search.php"))
 	{
 		unset($GLOBALS[$fix_vars[$n]]);
 		unset($HTTP_GET_VARS[$fix_vars[$n]]);

@@ -24,12 +24,12 @@
  * - Used for sending private messages between users of the BB.
  */
 
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = "Send Private Message";
 $pagetype = "sendprivmsg";
-include('page_header.'.$phpEx);
+include('page_header.php');
 
 
 if($submit) {
@@ -98,7 +98,7 @@ if($submit) {
 	echo "<TR BGCOLOR=\"$color1\" ALIGN=\"LEFT\"><TD><font face=\"Verdana\" size=\"2\"><P>";
 	echo "<P><BR><center>";
 	echo "$l_stored<br> \n";
-	echo "<a href=\"sendpmsg.$phpEx\">$l_sendothermsg</a> <br> \n";
+	echo "<a href=\"sendpmsg.php\">$l_sendothermsg</a> <br> \n";
 	echo "<p></center></font>";
 	echo "</TD></TR></TABLE></TD></TR></TABLE><br>";
 	
@@ -213,5 +213,5 @@ if($submit) {
 
 <?php
 }
-require('page_tail.'.$phpEx);
+require('page_tail.php');
 ?>

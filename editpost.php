@@ -82,7 +82,7 @@ if($submit) {
       }
    }
    if($die == 1) {
-      include('page_header.' . $phpEx);
+      include('page_header.php');
       error_die($l_permdeny);
    }
    // IF we made it this far we are allowed to edit this message, yay!
@@ -116,7 +116,7 @@ if($submit) {
       $forward = 1;
       $topic = $topic_id;
       $forum = $forum_id;
-      include('page_header.' . $phpEx);
+      include('page_header.php');
       $sql = "UPDATE posts_text SET post_text = '$message' WHERE (post_id = '$post_id')";
       if(!$result = mysql_query($sql, $db))
 			error_die("Unable to update the posting in the database");
@@ -137,7 +137,7 @@ if($submit) {
       echo "<br><TABLE BORDER=\"0\" CELLPADDING=\"1\" CELLSPACEING=\"0\" ALIGN=\"CENTER\" VALIGN=\"TOP\" WIDTH=\"$tablewidth\">";
       echo "<TR><TD  BGCOLOR=\"$table_bgcolor\"><TABLE BORDER=\"0\" CALLPADDING=\"1\" CELLSPACEING=\"1\" WIDTH=\"100%\">";
       echo "<TR BGCOLOR=\"$color1\" ALIGN=\"LEFT\"><TD><font face=\"Verdana\" size=\"2\"><P>";
-      echo "<P><BR><center>$l_stored<ul>$l_click <a href=\"viewtopic.$phpEx?topic=$topic_id&forum=$forum_id\">$l_here</a> $l_viewmsg<P>$l_click <a href=\"viewforum.$phpEx?forum=$forum_id\">$l_here</a> $l_returntopic</ul></center><P></font>";
+      echo "<P><BR><center>$l_stored<ul>$l_click <a href=\"viewtopic.php?topic=$topic_id&forum=$forum_id\">$l_here</a> $l_viewmsg<P>$l_click <a href=\"viewforum.php?forum=$forum_id\">$l_here</a> $l_returntopic</ul></center><P></font>";
       echo "</TD></TR></TABLE></TD></TR></TABLE><br>";
    }
    else {
@@ -150,7 +150,7 @@ if($submit) {
 					|| 
 					($userdata[user_level] > 2 || is_moderator($forum, $userdata[user_id], $db))  )) 
 		{
-			include('page_header.' . $phpEx);
+			include('page_header.php');
 			error_die($l_permdeny);
 		}
 
@@ -199,7 +199,7 @@ if($submit) {
       echo "<br><TABLE BORDER=\"0\" CELLPADDING=\"1\" CELLSPACEING=\"0\" ALIGN=\"CENTER\" VALIGN=\"TOP\" WIDTH=\"$tablewidth\">";
       echo "<TR><TD  BGCOLOR=\"$table_bgcolor\"><TABLE BORDER=\"0\" CALLPADDING=\"1\" CELLSPACEING=\"1\" WIDTH=\"100%\">";
       echo "<TR BGCOLOR=\"$color1\" ALIGN=\"LEFT\"><TD><font face=\"Verdana\" size=\"2\"><P>";
-      echo "<P><BR><center>$l_deleted <ul>$l_click <a href=\"viewforum.$phpEx?forum=$forum_id\">$l_here</a> $l_returntopic<p>$l_click <a href=\"index.$phpEx\">$l_here</a>$l_returnindex</ul></center><P></font>";
+      echo "<P><BR><center>$l_deleted <ul>$l_click <a href=\"viewforum.php?forum=$forum_id\">$l_here</a> $l_returntopic<p>$l_click <a href=\"index.php\">$l_here</a>$l_returnindex</ul></center><P></font>";
       echo "</TD></TR></TABLE></TD></TR></TABLE><br>";
    }	
 }
@@ -369,7 +369,7 @@ else {
 	if (!$user_logged_in) {
 		// ask for a password..
 	   echo "<TR> \n";
-	   echo "<TD BGCOLOR=\"$color1\"><font size=\"$FontSize2\" face=\"$FontFace\">$l_password:<BR><font size=\"$FontSize3\"><i><a href=\"sendpassword.$phpEx\" target=\"_blank\">($l_passwdlost)</a></i></font></TD>";
+	   echo "<TD BGCOLOR=\"$color1\"><font size=\"$FontSize2\" face=\"$FontFace\">$l_password:<BR><font size=\"$FontSize3\"><i><a href=\"sendpassword.php\" target=\"_blank\">($l_passwdlost)</a></i></font></TD>";
 	   echo "<TD BGCOLOR=\"$color2\"><INPUT TYPE=\"PASSWORD\" NAME=\"passwd\" SIZE=\"25\" MAXLENGTH=\"25\"></TD> \n";
 	   echo "</TR> \n";
 	}
@@ -463,7 +463,7 @@ else {
 	// Topic review
 	echo "<font size=\"$FontSize2\" face=\"$FontFace\">";
 	echo "<BR><CENTER>";
-	echo "<a href=\"viewtopic.$phpEx?topic=$topic&forum=$forum\" target=\"_blank\"><b>$l_topicreview</b></a>";
+	echo "<a href=\"viewtopic.php?topic=$topic&forum=$forum\" target=\"_blank\"><b>$l_topicreview</b></a>";
 	echo "</CENTER><BR>";
 	       
 }

@@ -146,7 +146,7 @@ switch($mode) {
 	<TD ALIGN="CENTER" COLSPAN="2"><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>"><B>Set Forum Wide Options</B></FONT></TD>
 </TR>
 <TR BGCOLOR="<?php echo $color1?>" ALIGN="LEFT">
-	<TD ALIGN="CENTER" COLSPAN="2"><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>"><I>NOTE: These settings will be stored in the database and will override any settings in config.<?php echo $phpEx?></I></FONT></TD>
+	<TD ALIGN="CENTER" COLSPAN="2"><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>"><I>NOTE: These settings will be stored in the database and will override any settings in config.php</I></FONT></TD>
 </TR>
 <TR BGCOLOR="<?php echo $color2?>" ALIGN="LEFT">
 	<TD><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">Site Name:</FONT></TD>
@@ -226,13 +226,13 @@ switch($mode) {
 			$result = mysql_query($sql, $db);
 			if (!$result) {
 				echo mysql_error() . "<br>\n";
-				die("Error doing deletion in admin_board.$phpEx");
+				die("Error doing deletion in admin_board.php");
 			}
 			$sql = "INSERT INTO headermetafooter (header, meta, footer) VALUES ('$header', '$metacode', '$footer')";
 			$result = mysql_query($sql, $db);
 			if(!$result) {
 				echo mysql_error() . "<br>\n";
-				die("<FONT FACE=\"$FontFace\" SIZE=\"$FontSize\" COLOR=\"$textcolor\">Error doing insertion in board_admin.$phpEx</FONT>");
+				die("<FONT FACE=\"$FontFace\" SIZE=\"$FontSize\" COLOR=\"$textcolor\">Error doing insertion in board_admin.php</FONT>");
 			}
 		echo "<TABLE width=\"95%\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" bordercolor=\"$table_bgcolor\">";
 		echo "<tr><td align=\"center\" width=\"100%\" bgcolor=\"$color1\"><font face=\"$FontFace\" size=\"$FontSize1\" color=\"$textcolor\"><B>Data Added.</B></font></td>";
@@ -245,7 +245,7 @@ switch($mode) {
 			$result = mysql_query($sql, $db);
 			if (!$result) {
 				echo mysql_error() . "<br>\n";
-				die("Error doing DB query in admin_board.$phpEx");
+				die("Error doing DB query in admin_board.php");
 			}
 			$row = mysql_fetch_array($result);
 			$currHeader = stripslashes($row[header]);
@@ -365,7 +365,7 @@ switch($mode) {
 	}
 ?>
 <TR BGCOLOR="<?php echo $color1?>" ALIGN="LEFT">
-        <TD ALIGN="CENTER" COLSPAN="6"><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">Special Rankings<BR>These are ranks that can be individually assigned to specific users<BR>To assign a special rank to a user click <a href="admin_users.<?php echo $phpEx?>?mode=moduser">here</a>.
+        <TD ALIGN="CENTER" COLSPAN="6"><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">Special Rankings<BR>These are ranks that can be individually assigned to specific users<BR>To assign a special rank to a user click <a href="admin_users.php?mode=moduser">here</a>.
 	<BR>NOTE: Min and Max post values will be ignored and automatically set to -1 on these rankings.</FONT>
 	</TD>
 </TR>

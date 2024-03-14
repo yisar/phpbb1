@@ -24,9 +24,9 @@
  * - Used for logging in a user and setting up a session.
  */
 
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = "Login";
 $pagetype = "other";
 
@@ -34,7 +34,7 @@ $pagetype = "other";
 
 
 if (!$submit) {
-	include('page_header.'.$phpEx);
+	include('page_header.php');
 	login_form();
 } else { // Something has been submitted
 	if ($user == '' || $passwd == '') {
@@ -63,11 +63,11 @@ if (!$submit) {
 	}
 	else
 	{
-		header("Location: $url_phpbb/index.$phpEx");
+		header("Location: $url_phpbb/index.php");
 	}
 	
 } // if/else (!$submit)
 
 
-require('page_tail.'.$phpEx);
+require('page_tail.php');
 ?>

@@ -69,7 +69,7 @@ if (!$submit && !$user_logged_in) {
    echo "<br><TABLE BORDER=\"0\" CELLPADDING=\"1\" CELLSPACING=\"0\" ALIGN=\"CENTER\" VALIGN=\"TOP\" WIDTH=\"$tablewidth\">";
    echo "<TR><TD  BGCOLOR=\"$table_bgcolor\"><TABLE BORDER=\"0\" CALLPADDING=\"1\" CELLSPACING=\"1\" WIDTH=\"100%\">";
    echo "<TR BGCOLOR=\"$color1\" ALIGN=\"LEFT\"><TD><font face=\"Verdana\" size=\"2\"><P>";
-   echo "<P><BR><center>$l_deletesucces $l_click <a href=\"$url_phpbb/viewpmsg.$phpEx\">$l_here</a> $l_toreturn<p></center></font>";
+   echo "<P><BR><center>$l_deletesucces $l_click <a href=\"$url_phpbb/viewpmsg.php\">$l_here</a> $l_toreturn<p></center></font>";
    echo "</TD></TR></TABLE></TD></TR></TABLE><br>";
 
 } // if/else (if submit)

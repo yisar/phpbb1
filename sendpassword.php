@@ -19,12 +19,12 @@
    *
    ***************************************************************************/
 
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetype = "other";
 $pagetitle = "Send Password";
-include('page_header.'.$phpEx);
+include('page_header.php');
 
 if($actkey) {
 	$sql = "SELECT user_id FROM users WHERE user_actkey = '$actkey'";
@@ -124,5 +124,5 @@ else {
      
 <?php
 }
-include('page_tail.'.$phpEx);
+include('page_tail.php');
 ?>

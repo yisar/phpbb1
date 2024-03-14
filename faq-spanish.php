@@ -85,7 +85,7 @@ include('page_header.php');
 	seleccionando la casilla 'Permitir que otros vean mi Direcci�n de correo
 	electr�nico' en el formulario de registro.
 	Puedes registrarte pulsando
-	<a href="<?php echo $url_phpbb?>/bb_register.<?php echo $phpEx?>?mode=agreement">aqu�</a></font>
+	<a href="<?php echo $url_phpbb?>/bb_register.php?mode=agreement">aqu�</a></font>
 	</td>
     </tr>
     <tr bgcolor="<?php echo $color1?>">

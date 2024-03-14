@@ -79,7 +79,7 @@ include('page_header.php');
 	Ihre email-Adresse zu sehen, wenn Sie bei der Registrierung oder sp&auml;ter in Ihrem Benutzerprofil die
 	entsprechende Option anklicken.
 	Wenn Sie jetzt registrieren m&ouml;chten, klicken Sie
-	<a href="<?php echo $url_phpbb?>/bb_register.<?php echo $phpEx?>?mode=agreement">hier...</a></font>
+	<a href="<?php echo $url_phpbb?>/bb_register.php?mode=agreement">hier...</a></font>
 	</td>
     </tr>
     <tr bgcolor="<?php echo $color1?>">

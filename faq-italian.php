@@ -80,7 +80,7 @@ Se il posting anonimo &egrave; accettato puoi farlo semplicemente senza inserire
 La registrazione &egrave; gratuita e non &egrave; necessario inserire il proprio nome reale. Bisogna inserire il proprio indirizzo e-mail, che sar&agrave; utilizzato solamente per inviarti una nuova password se hai dimenticato la tua.
 C'&egrave; anche la possibilit&agrave;, scelta di default, di nascondere il tuo indirizzo a chiunque eccetto gli amministratori. Se per&ograve; lo si desidera si pu&ograve; permettere agli altri di vedere l'indirizzo scegliendo "Permetti a tutti gli utenti di visualizzare il mio indirizzo email" nel modulo di 
 registrazione o nel proprio profilo. Puoi registrarti cliccando 
-	<a href="<?php echo $url_phpbb?>/bb_register.<?php echo $phpEx?>?mode=agreement">qui</a></font>
+	<a href="<?php echo $url_phpbb?>/bb_register.php?mode=agreement">qui</a></font>
 	</td>
     </tr>
     <tr bgcolor="<?php echo $color1?>">

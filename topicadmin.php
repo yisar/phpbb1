@@ -19,12 +19,12 @@
  *
  ***************************************************************************/
 
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = "Topic Administration";
 $pagetype = "bbcode_ref";
-include('page_header.'.$phpEx);
+include('page_header.php');
 
 if (isset($user))
 {
@@ -92,7 +92,7 @@ if($HTTP_POST_VARS['submit'] || ($user_logged_in==1 && $mode=='viewip')) {
 		}
 		sync($db, $forum, 'forum');
 
-      echo "The topic has been removed from the database. Click <a href=\"viewforum.$phpEx?forum=$forum\">here</a> to return to the forum, or <a href=\"index.$phpEx\">here</a> to return to the forum index.";
+      echo "The topic has been removed from the database. Click <a href=\"viewforum.php?forum=$forum\">here</a> to return to the forum, or <a href=\"index.php\">here</a> to return to the forum index.";
       break;
     case 'move':
       $sql = "UPDATE topics SET forum_id = '$newforum' WHERE topic_id = '$topic'";
@@ -104,19 +104,19 @@ if($HTTP_POST_VARS['submit'] || ($user_logged_in==1 && $mode=='viewip')) {
 		sync($db, $newforum, 'forum');
 		sync($db, $forum, 'forum');
 
-      echo "The topic has been moved. Click <a href=\"viewtopic.$phpEx?topic=$topic&forum=$newforum\">here</a> to view the updated topic. Or click <a href=\"index.$phpEx\">here</a> to return to the forum index";
+      echo "The topic has been moved. Click <a href=\"viewtopic.php?topic=$topic&forum=$newforum\">here</a> to view the updated topic. Or click <a href=\"index.php\">here</a> to return to the forum index";
       break;
     case 'lock':
       $sql = "UPDATE topics SET topic_status = 1 WHERE topic_id = '$topic'";
       if(!$r = mysql_query($sql, $db))
 			die("Error - Could not lock the selected topic. Please go back and try again.");
-      echo "The topic has been locked. Click <a href=\"viewtopic.$phpEx?topic=$topic&forum=$forum\">here</a> to view, or <a href=\"index.$phpEx\">here</a> to return to the forum index.";
+      echo "The topic has been locked. Click <a href=\"viewtopic.php?topic=$topic&forum=$forum\">here</a> to view, or <a href=\"index.php\">here</a> to return to the forum index.";
       break;
     case 'unlock':
       $sql = "UPDATE topics SET topic_status = '0' WHERE topic_id = '$topic'";
       if(!$r = mysql_query($sql, $db))
 	die("Error - Could not unlock the selected topic. Please go back and try again.");
-      echo "The topic has been unlocked. Click <a href=\"viewtopic.$phpEx?topic=$topic&forum=$forum\">here</a> to view, or <a href=\"index.$phpEx\">here</a> to return to the forum index.";
+      echo "The topic has been unlocked. Click <a href=\"viewtopic.php?topic=$topic&forum=$forum\">here</a> to view, or <a href=\"index.php\">here</a> to return to the forum index.";
       break;
     case 'viewip':
       $sql = "SELECT u.username, p.poster_ip FROM users u, posts p WHERE p.post_id = '$post' AND u.user_id = p.poster_id";
@@ -287,7 +287,7 @@ else {  // No submit
 </TABLE></TD></TR></TABLE></TD></TR></TABLE>
 <?php
 }
-include('page_tail.'.$phpEx);
+include('page_tail.php');
 ?>
 
 

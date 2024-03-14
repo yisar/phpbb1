@@ -80,7 +80,7 @@ include('page_header.php');
 		als je je wachtwoord bent vergeten. Je hebt ook de optie om je emailadres
 		te verbergen voor iedereen behalve de beheerder.<br>
 		Je kunt je aanmelden door te
-		<a href="<?php echo $url_phpbb?>/bb_register.<?php echo $phpEx?>?mode=agreement">Registreren</a>.
+		<a href="<?php echo $url_phpbb?>/bb_register.php?mode=agreement">Registreren</a>.
 	</font>
 	</td>
     </tr>

@@ -81,7 +81,7 @@ include('page_header.php');
         votre adresse e-mail est cach�e aux yeux de tout le monde (except� de l'administrateur du forum) mais vous pouvez permettre aux autres 
         utilisateur de voir votre adresse e-mail en s�lectionnant l'option "Autoriser les autres membres � voir votre Adresse Email" lors de 
         l'inscription ou encore ult�rieurement dans votre profil. Vous pouvez vous inscrire 
-        <a href="<?php echo $url_phpbb?>/bb_register.<?php echo $phpEx?>?mode=agreement">ici</a></font>.
+        <a href="<?php echo $url_phpbb?>/bb_register.php?mode=agreement">ici</a></font>.
 	</td>
     </tr>
     <tr bgcolor="<?php echo $color1?>">

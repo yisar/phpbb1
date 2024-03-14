@@ -19,9 +19,9 @@
  *
  ***************************************************************************/
 
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = $l_preferences;
 $pagetype = "index";
 
@@ -48,7 +48,7 @@ if($HTTP_POST_VARS['submit'] || $user_logged_in) {
 	 $time = (time() + 3600 * 24 * 30 * 12);
 	 setcookie($cookiename, $userdata[user_id], $time, $cookiepath, $cookiedomain, $cookiesecure);
       }
-      include('page_header.'.$phpEx);
+      include('page_header.php');
       //
       // The following code was submitted by Tetraboy <tetraboy@game-mods.com> to fix a security
       // hole found to exist in some systems.
@@ -86,7 +86,7 @@ if($HTTP_POST_VARS['submit'] || $user_logged_in) {
 	 $md_pass = md5($passwd);
 	 $userdata = get_userdata($user, $db);
 	 if($md_pass != $userdata["user_password"]) {
-	    include('page_header.'.$phpEx);
+	    include('page_header.php');
 	    error_die("$l_wrongpass $l_tryagain");
 	 }
 	 if(is_banned($userdata[user_id], "username", $db))
@@ -94,7 +94,7 @@ if($HTTP_POST_VARS['submit'] || $user_logged_in) {
 	 $sessid = new_session($userdata[user_id], $REMOTE_ADDR, $sesscookietime, $db);
 	 set_session_cookie($sessid, $sesscookietime, $sesscookiename, $cookiepath, $cookiedomain, $cookiesecure);
       }
-      include('page_header.'.$phpEx);
+      include('page_header.php');
       if($userdata[user_viewemail] == 1) {
 	 $y = "CHECKED";
       } else {
@@ -218,8 +218,8 @@ print language_select($default_lang, "lang");
 	}
 }
 else {
-	include('page_header.'.$phpEx);
+	include('page_header.php');
 	login_form();
 }
-include('page_tail.'.$phpEx);
+include('page_tail.php');
 ?>

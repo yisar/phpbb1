@@ -56,8 +56,8 @@ if($mode) {
 	<TR ALIGN="LEFT">
 		<TD  BGCOLOR="<?php echo $color1?>" width="25%"><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>"><b><?php echo $l_username?>:</FONT></b></TD>
 		<TD  BGCOLOR="<?php echo $color2?>"><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>"><?php echo $userdata[username]?></FONT>
-	        <font size=-2>(<a href="search.<?php echo $phpEx?>?term=&addterms=any&forum=all&search_username=<?php echo rawurlencode($userdata[username])?>&sortby=p.post_time&searchboth=both&submit=Search"><?php echo $l_viewpostuser?></a>)
-			  &nbsp;&nbsp;(<a href="sendpmsg.<?php echo $phpEx?>?tousername=<?php echo rawurlencode($userdata[username])?>"><?php echo $l_sendpmsg?></a>)</font></TD>
+	        <font size=-2>(<a href="search.php?term=&addterms=any&forum=all&search_username=<?php echo rawurlencode($userdata[username])?>&sortby=p.post_time&searchboth=both&submit=Search"><?php echo $l_viewpostuser?></a>)
+			  &nbsp;&nbsp;(<a href="sendpmsg.php?tousername=<?php echo rawurlencode($userdata[username])?>"><?php echo $l_sendpmsg?></a>)</font></TD>
 	</TR>
 	<TR ALIGN="LEFT">
                 <TD  BGCOLOR="<?php echo $color1?>" width="25%"><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>"><b><?php echo $l_joined?>:</FONT></b></TD>
@@ -213,7 +213,7 @@ if($mode) {
 		 $sessid = new_session($userdata[user_id], $REMOTE_ADDR, $sesscookietime, $db);
 		 set_session_cookie($sessid, $sesscookietime, $sesscookiename, $cookiepath, $cookiedomain, $cookiesecure);
 		 include('page_header.php');
-		 echo "$l_infoupdated.<br>$l_click <a href=\"index.$phpEx\">$l_here</a> $l_returnindex.";
+		 echo "$l_infoupdated.<br>$l_click <a href=\"index.php\">$l_here</a> $l_returnindex.";
 	      } else {
 		 // not trying to save, so show the form.
 		 if (!$user_logged_in) {

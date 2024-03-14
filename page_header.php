@@ -52,7 +52,7 @@ if($l_special_meta) {
 	echo $l_special_meta . "\n";
 }
 if($forward) {
-	echo "<META HTTP-EQUIV=\"refresh\" content=\"3;URL=$url_phpbb/viewtopic.$phpEx?topic=$topic&forum=$forum&$total_topic\">";
+	echo "<META HTTP-EQUIV=\"refresh\" content=\"3;URL=$url_phpbb/viewtopic.php?topic=$topic&forum=$forum&$total_topic\">";
 } 
 $meta = showmeta($db);
 ?>
@@ -73,7 +73,7 @@ showheader($db);
 ?>
 <TABLE BORDER=0 WIDTH="<?php echo $TableWidth?>" CELLPADDING="5" ALIGN="CENTER">
 <TR>                    
-        <TD ALIGN="CENTER" WIDTH="50%" ROWSPAN="2"><a href="<?php echo $url_phpbb?>/index.<?php echo $phpEx ?>"><IMG SRC="<?php echo $header_image?>" border="0"></a><br>
+        <TD ALIGN="CENTER" WIDTH="50%" ROWSPAN="2"><a href="<?php echo $url_phpbb?>/index.php"><IMG SRC="<?php echo $header_image?>" border="0"></a><br>
 			</TD>
 <?php
 // Switch for cell two  (posts buttons)
@@ -83,7 +83,7 @@ switch($pagetype) {
 ?>
 	<TD ALIGN="CENTER">
 		<FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>"><b>Post New Topic in:<BR>
-		<a href="<?php echo $url_phpbb?>/viewforum.<?php echo $phpEx ?>?forum=<?php echo $forum?>"><?php echo $forum_name?></a></b>
+		<a href="<?php echo $url_phpbb?>/viewforum.php?forum=<?php echo $forum?>"><?php echo $forum_name?></a></b>
 		</font>
 	</TD>
 <?php
@@ -91,19 +91,19 @@ switch($pagetype) {
 	case 'viewforum':
 ?>
 	<TD ALIGN="CENTER">
-		<a href="<?php echo $url_phpbb?>/newtopic.<?php echo $phpEx ?>?forum=<?php echo $forum?>"><IMG SRC="<?php echo $newtopic_image?>" BORDER="0"></a>
+		<a href="<?php echo $url_phpbb?>/newtopic.php?forum=<?php echo $forum?>"><IMG SRC="<?php echo $newtopic_image?>" BORDER="0"></a>
 	</TD>
 <?php
 	break;
 	case 'viewtopic':
 ?>
 	<TD ALIGN="CENTER">
-		<a href="<?php echo $url_phpbb?>/newtopic.<?php echo $phpEx ?>?forum=<?php echo $forum?>">
+		<a href="<?php echo $url_phpbb?>/newtopic.php?forum=<?php echo $forum?>">
 			<IMG SRC="<?php echo $newtopic_image?>" BORDER="0"></a>&nbsp;&nbsp;
 <?php
 	if($lock_state != 1) {
 ?>
-		<a href="<?php echo $url_phpbb?>/reply.<?php echo $phpEx ?>?topic=<?php echo $topic?>&forum=<?php echo $forum?>">
+		<a href="<?php echo $url_phpbb?>/reply.php?topic=<?php echo $topic?>&forum=<?php echo $forum?>">
 			<IMG SRC="<?php echo $reply_image?>" BORDER="0"></a></TD>
 <?php
 	}
@@ -131,13 +131,13 @@ switch($pagetype) {
 <TR>
 	<TD ALIGN="CENTER">
 		<FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize1?>" COLOR="<?php echo $textcolor?>">
-		[<a href="<?php echo $url_phpbb?>/bb_register.<?php echo $phpEx ?>?mode=agreement"><?php echo $l_register?></a>]&nbsp;
-		[<a href="<?php echo $url_phpbb?>/bb_profile.<?php echo $phpEx ?>?mode=edit"><?php echo $l_editprofile?></a>]&nbsp;
-		[<a href="<?php echo $url_phpbb?>/prefs.<?php echo $phpEx ?>"><?php echo $l_editprefs?></a>]&nbsp;
-		[<a href="<?php echo $url_phpbb?>/search.<?php echo $phpEx ?>"><?php echo $l_search?></a>]<br>
+		[<a href="<?php echo $url_phpbb?>/bb_register.php?mode=agreement"><?php echo $l_register?></a>]&nbsp;
+		[<a href="<?php echo $url_phpbb?>/bb_profile.php?mode=edit"><?php echo $l_editprofile?></a>]&nbsp;
+		[<a href="<?php echo $url_phpbb?>/prefs.php"><?php echo $l_editprefs?></a>]&nbsp;
+		[<a href="<?php echo $url_phpbb?>/search.php"><?php echo $l_search?></a>]<br>
 		
-		[<a href="<?php echo $url_phpbb?>/viewpmsg.<?php echo $phpEx ?>"><?php echo $l_privmsgs?></a>]&nbsp;
-		[<a href="<?php echo $url_phpbb?>/bb_memberlist.<?php echo $phpEx ?>"><?php echo $l_memberslist?></a>]&nbsp;
+		[<a href="<?php echo $url_phpbb?>/viewpmsg.php"><?php echo $l_privmsgs?></a>]&nbsp;
+		[<a href="<?php echo $url_phpbb?>/bb_memberlist.php"><?php echo $l_memberslist?></a>]&nbsp;
 		[<a href="<?php echo $url_phpbb?>/<?php echo $faq_url ?>"><?php echo $l_faq?></a>]&nbsp;
 		[<?php echo $login_logout_link?>]
 <?php		
@@ -158,7 +158,7 @@ switch($pagetype) {
 			$row = @mysql_fetch_array($result);
 			$new_message = $row[count];
 			$word = ($new_message > 1) ? "messages" : "message";
-			$privmsg_url = "$url_phpbb/viewpmsg.$phpEx";
+			$privmsg_url = "$url_phpbb/viewpmsg.php";
 			
 			if ($new_message != 0)
 			{
@@ -182,8 +182,8 @@ switch($pagetype) {
 	$row = mysql_fetch_array($res);
 	$newest_user = $row["username"];
 	$newest_user_id = $row["user_id"];
-	$profile_url = "$url_phpbb/bb_profile.$phpEx?mode=view&user=$newest_user_id";
-	$online_url = "$url_phpbb/whosonline.$phpEx";
+	$profile_url = "$url_phpbb/bb_profile.php?mode=view&user=$newest_user_id";
+	$online_url = "$url_phpbb/whosonline.php";
 
 ?>
 <TR>
@@ -218,7 +218,7 @@ $forum_moderators = get_moderators($forum, $db);
       while(list($mod_id, $mod_name) = each($mods)) {
 	 if($count > 0)
 	   echo ", ";
-	 echo "<a href=\"bb_profile.$phpEx?mode=view&user=$mod_id\">".trim($mod_name)."</a>";
+	 echo "<a href=\"bb_profile.php?mode=view&user=$mod_id\">".trim($mod_name)."</a>";
 	 $count++;
       }
    }
@@ -232,9 +232,9 @@ $forum_moderators = get_moderators($forum, $db);
 <TR>
 	<TD COLSPAN="2" ALIGN="LEFT">
 	<FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize1?>" COLOR="<?php echo $textcolor?>">
-		<a href="<?php echo $url_phpbb?>/index.<?php echo $phpEx ?>"><?php echo $sitename?> Forum Index</a>
+		<a href="<?php echo $url_phpbb?>/index.php"><?php echo $sitename?> Forum Index</a>
 		<b><?php echo $l_separator?></b>
-		<a href="<?php echo "$url_phpbb/viewforum.$phpEx?forum=$forum&$total_forum"?>"><?php echo stripslashes($forum_name)?></a> 
+		<a href="<?php echo "$url_phpbb/viewforum.php?forum=$forum&$total_forum"?>"><?php echo stripslashes($forum_name)?></a> 
 <?php
         if($pagetype != "viewforum")
 		echo "<b>$l_separator</b>";
@@ -249,7 +249,7 @@ $forum_moderators = get_moderators($forum, $db);
 <TR>
         <TD COLSPAN="2" ALIGN="CENTER">
 	<FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">
-		[<a href="<?php echo $url_phpbb?>/sendpmsg.<?php echo $phpEx ?>"><?php echo $l_sendpmsg?></a>]
+		[<a href="<?php echo $url_phpbb?>/sendpmsg.php"><?php echo $l_sendpmsg?></a>]
 	<br>
         </TD>
 </TR>

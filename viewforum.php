@@ -181,7 +181,7 @@ if($myrow = mysql_fetch_array($result)) {
       $topic_title = own_stripslashes($myrow[topic_title]);
 		$pagination = '';
 		$start = '';
-		$topiclink = "viewtopic.$phpEx?topic=$myrow[topic_id]&forum=$forum";
+		$topiclink = "viewtopic.php?topic=$myrow[topic_id]&forum=$forum";
 		if($replys+1 > $posts_per_page) 
 		{
 			$pagination .= "&nbsp;&nbsp;&nbsp;<font size=\"$FontSize3\" face=\"$FontFace\" color=\"$textcolor\">(<img src=\"$posticon\">$l_gotopage ";
@@ -256,13 +256,13 @@ $count = 1;
 $next = $topics_start + $topics_per_page;
 if($all_topics > $topics_per_page) {
    if($next < $all_topics) 
-     echo "<font size=-1>\n<a href=\"viewforum.$phpEx?forum=$forum&start=$next\">$l_nextpage</a> | ";
+     echo "<font size=-1>\n<a href=\"viewforum.php?forum=$forum&start=$next\">$l_nextpage</a> | ";
    for($x = 0; $x < $all_topics; $x++) {
       if(!($x % $topics_per_page)) {
 	 if($x == $topics_start)
 	   echo "$count\n";
 	 else
-	   echo "<a href=\"viewforum.$phpEx?forum=$forum&start=$x\">$count</a>\n";
+	   echo "<a href=\"viewforum.php?forum=$forum&start=$x\">$count</a>\n";
 	 $count++;
 	 if(!($count % 10)) echo "<BR>";
       }

@@ -22,12 +22,12 @@
  * Created by: Steven Cunningham (defender@webinfractions.com) for phpBB
  * *************************************************************************/
 
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = "FAQ";
 $pagetype = "other";
-include('page_header.'.$phpEx);
+include('page_header.php');
 ?>
 
 <div align="center"><center>
@@ -78,7 +78,7 @@ include('page_header.'.$phpEx);
         your actual email address, however it will only be used to email you a new password if you have forgotten yours. You also have the option to hide
         you email address from everyone except the administrator, it option is selected by default but you can allow others to see your email address
         by selecting the 'Allow other users to view my email address' checkbox on the registration form. You can register by clicking
-	<a href="<?php echo $url_phpbb?>/bb_register.<?php echo $phpEx?>?mode=agreement">here</a></font>
+	<a href="<?php echo $url_phpbb?>/bb_register.php?mode=agreement">here</a></font>
 	</td>
     </tr>
     <tr bgcolor="<?php echo $color1?>">
@@ -576,7 +576,7 @@ You must not use both HTML and BBCode to do the same function.  Also note that t
 	$sql = "SELECT * FROM ranks WHERE rank_special = 0";
 	if(!$r = mysql_query($sql, $db)) {
 	echo "Error connecting to the database";
-	include('page_tail.'.$phpEx);
+	include('page_tail.php');
 	exit();
 	}
 	?>
@@ -642,5 +642,5 @@ You must not use both HTML and BBCode to do the same function.  Also note that t
 </div>
 
 <?php
-include('page_tail.'.$phpEx);
+include('page_tail.php');
 ?>

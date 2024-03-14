@@ -119,7 +119,7 @@ if($submit) {
    $message .= "\r\n$email_sig";
 		 
    mail($email, $l_welcomesubj, $l_welcomemail, "From: $email_from");
-   echo "<p>$l_beenadded<p>$l_click <a href=\"$url_phpbb/index.$phpEx\">$l_here</a> $l_returnindex<br>$l_thankregister<p><br>";
+   echo "<p>$l_beenadded<p>$l_click <a href=\"$url_phpbb/index.php\">$l_here</a> $l_returnindex<br>$l_thankregister<p><br>";
 }
 else {
    include('page_header.php');

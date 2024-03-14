@@ -19,12 +19,12 @@
  *
  ***************************************************************************/
 
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require("auth.$phpEx");
+include('functions.php');
+include('config.php');
+require("auth.php");
 $pagetitle = $l_indextitle;
 $pagetype = "index";
-include('page_header.'.$phpEx);
+include('page_header.php');
 
 $sql = "SELECT c.* FROM catagories c, forums f
 	 WHERE f.cat_id=c.cat_id
@@ -122,7 +122,7 @@ for($i = 0; $i < $total_categories; $i++) {
 		$total_topics = $forum_row[$x]["forum_topics"];
 		$desc = stripslashes($forum_row[$x][forum_desc]);
 
-	 	echo "<TD BGCOLOR=\"$color2\"><FONT FACE=\"$FontFace\" SIZE=\"$FontSize2\" COLOR=\"$textcolor\"><a href=\"viewforum.$phpEx?forum=".$forum_row[$x]["forum_id"]."&$total_posts\">$name</a></font>\n";
+	 	echo "<TD BGCOLOR=\"$color2\"><FONT FACE=\"$FontFace\" SIZE=\"$FontSize2\" COLOR=\"$textcolor\"><a href=\"viewforum.php?forum=".$forum_row[$x]["forum_id"]."&$total_posts\">$name</a></font>\n";
 	 	echo "<br><FONT FACE=\"$FontFace\" SIZE=\"$FontSize1\" COLOR=\"$textcolor\">$desc</font></TD>\n";
 	 	echo "<TD BGCOLOR=\"$color1\" WIDTH=5% ALIGN=\"CENTER\" VALIGN=\"MIDDLE\"><FONT FACE=\"$FontFace\" SIZE=\"$FontSize2\" COLOR=\"$textcolor\">$total_topics</font></TD>\n";
 	 	echo "<TD BGCOLOR=\"$color2\" WIDTH=5% ALIGN=\"CENTER\" VALIGN=\"MIDDLE\"><FONT FACE=\"$FontFace\" SIZE=\"$FontSize2\" COLOR=\"$textcolor\">$total_posts</font></TD>\n";
@@ -137,7 +137,7 @@ for($i = 0; $i < $total_categories; $i++) {
 		 echo ", ";
 	       if(!($count % 2) && $count != 0)
 		 echo "<BR>";
-	       echo "<a href=\"bb_profile.$phpEx?mode=view&user=$mod_id\">$mod_name</a>";
+	       echo "<a href=\"bb_profile.php?mode=view&user=$mod_id\">$mod_name</a>";
 	       $count++;
 	    }
 	 }
@@ -156,6 +156,6 @@ for($i = 0; $i < $total_categories; $i++) {
 </FONT></TD></TR></TABLE>
 
 <?php
-require('page_tail.'.$phpEx);
+require('page_tail.php');
 ?>
 

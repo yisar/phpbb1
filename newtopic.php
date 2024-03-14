@@ -22,12 +22,12 @@
 // Set the error reporting to a sane value, 'cause we haven't included auth.php yet..
 error_reporting  (E_ERROR | E_WARNING | E_PARSE); // This will NOT report uninitialized variables
 if($cancel) {
-	header("Location: viewforum.$phpEx?forum=$forum");
+	header("Location: viewforum.php?forum=$forum");
 }
 
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = "New Topic";
 $pagetype = "newtopic";
 $sql = "SELECT forum_name, forum_access, forum_type FROM forums WHERE (forum_id = '$forum')";
@@ -189,17 +189,17 @@ if($HTTP_POST_VARS['submit']) {
    // Subtract 1 because we want the nr of replies, not the nr of posts.
 
    $forward = 1;
-   include('page_header.'.$phpEx);
+   include('page_header.php');
 
    echo "<br><TABLE BORDER=\"0\" CELLPADDING=\"1\" CELLSPACEING=\"0\" ALIGN=\"CENTER\" VALIGN=\"TOP\" WIDTH=\"$tablewidth\">";
    echo "<TR><TD  BGCOLOR=\"$table_bgcolor\"><TABLE BORDER=\"0\" CALLPADDING=\"1\" CELLSPACEING=\"1\" WIDTH=\"100%\">";
    echo "<TR BGCOLOR=\"$color1\" ALIGN=\"LEFT\"><TD><font face=\"Verdana\" size=\"2\"><P>";
-   echo "<P><BR><center>$l_stored<P>$l_click <a href=\"viewtopic.$phpEx?topic=$topic_id&forum=$forum&$total_topic\">$l_here</a> $l_viewmsg<p>$l_click <a href=\"viewforum.$phpEx?forum=$forum_id&total_forum\">$l_here</a> $l_returntopic</center><P></font>";
+   echo "<P><BR><center>$l_stored<P>$l_click <a href=\"viewtopic.php?topic=$topic_id&forum=$forum&$total_topic\">$l_here</a> $l_viewmsg<p>$l_click <a href=\"viewforum.php?forum=$forum_id&total_forum\">$l_here</a> $l_returntopic</center><P></font>";
    echo "</TD></TR></TABLE></TD></TR></TABLE><br>";
 
 
 } else {
-   include('page_header.'.$phpEx);
+   include('page_header.php');
 ?>
 
 	<FORM ACTION="<?php echo $PHP_SELF?>" METHOD="POST">
@@ -244,7 +244,7 @@ if($HTTP_POST_VARS['submit']) {
 		// no session, need a password.
 		echo "    <TR ALIGN=\"LEFT\"> \n";
 		echo "        <TD BGCOLOR=\"$color1\" width=\"25%\"><font size=\"$FontSize2\" face=\"$FontFace\"><b>$l_password:</b></font><BR>";
-		echo "        <font size=\"$FontSize3\"><i><a href=\"sendpassword.$phpEx\" target=\"_blank\">$l_passwdlost</a></i></font></TD> \n";
+		echo "        <font size=\"$FontSize3\"><i><a href=\"sendpassword.php\" target=\"_blank\">$l_passwdlost</a></i></font></TD> \n";
 		echo "        <TD BGCOLOR=\"$color2\"><INPUT TYPE=\"PASSWORD\" NAME=\"password\" SIZE=\"25\" MAXLENGTH=\"25\"></TD> \n";
 		echo "    </TR> \n";
 	}
@@ -326,5 +326,5 @@ if($HTTP_POST_VARS['submit']) {
 
 <?php
 }
-require('page_tail.'.$phpEx);
+require('page_tail.php');
 ?>

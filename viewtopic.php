@@ -250,7 +250,7 @@ do {
    echo "\n<HR>";
    if ($posterdata[user_id] != -1)
    {
-   	echo "&nbsp;&nbsp<a href=\"$url_phpbb/bb_profile.$phpEx?mode=view&user=$posterdata[user_id]\"><img src=\"$profile_image\" border=0 alt=\"$l_profileof $posterdata[username]\"></a>\n";
+   	echo "&nbsp;&nbsp<a href=\"$url_phpbb/bb_profile.php?mode=view&user=$posterdata[user_id]\"><img src=\"$profile_image\" border=0 alt=\"$l_profileof $posterdata[username]\"></a>\n";
 
 	   if($posterdata["user_viewemail"] != 0)
 	     echo "&nbsp;&nbsp;<a href=\"mailto:$posterdata[user_email]\"><IMG SRC=\"$email_image\" BORDER=0 ALT=\"$l_email $posterdata[username]\"></a>\n";
@@ -269,7 +269,7 @@ do {
 	     echo "&nbsp;&nbsp;<a href=\"http://edit.yahoo.com/config/send_webmesg?.target=$posterdata[user_yim]&.src=pg\"><img src=\"$images_yim\" border=\"0\"></a>";
 
 	   if($posterdata["user_msnm"] != '')
-	     echo "&nbsp;&nbsp;<a href=\"$url_phpbb/bb_profile.$phpEx?mode=view&user=$posterdata[user_id]\"><img src=\"$images_msnm\" border=\"0\"></a>";
+	     echo "&nbsp;&nbsp;<a href=\"$url_phpbb/bb_profile.php?mode=view&user=$posterdata[user_id]\"><img src=\"$images_msnm\" border=\"0\"></a>";
 
    	echo "&nbsp;&nbsp;<IMG SRC=\"images/div.gif\">\n";
    }
@@ -279,12 +279,12 @@ do {
    }
 
 
-   echo "&nbsp;&nbsp;<a href=\"$url_phpbb/editpost.$phpEx?post_id=$myrow[post_id]&topic=$topic&forum=$forum\"><img src=\"$edit_image\" border=0 alt=\"$l_editdelete\"></a>\n";
+   echo "&nbsp;&nbsp;<a href=\"$url_phpbb/editpost.php?post_id=$myrow[post_id]&topic=$topic&forum=$forum\"><img src=\"$edit_image\" border=0 alt=\"$l_editdelete\"></a>\n";
 
-   echo "&nbsp;&nbsp;<a href=\"$url_phpbb/reply.$phpEx?topic=$topic&forum=$forum&post=$myrow[post_id]&quote=1\"><IMG SRC=\"$reply_wquote_image\" BORDER=\"0\" alt=\"$l_replyquote\"></a>\n";
+   echo "&nbsp;&nbsp;<a href=\"$url_phpbb/reply.php?topic=$topic&forum=$forum&post=$myrow[post_id]&quote=1\"><IMG SRC=\"$reply_wquote_image\" BORDER=\"0\" alt=\"$l_replyquote\"></a>\n";
    if(is_moderator($forum, $userdata["user_id"], $db) || $userdata[user_level] > 2) {
       echo "&nbsp;&nbsp;<IMG SRC=\"images/div.gif\">\n";
-      echo "&nbsp;&nbsp;<a href=\"$url_phpbb/topicadmin.$phpEx?mode=viewip&post=$myrow[post_id]&forum=$forum\"><IMG SRC=\"$ip_image\" BORDER=0 ALT=\"$l_viewip\"></a>\n";
+      echo "&nbsp;&nbsp;<a href=\"$url_phpbb/topicadmin.php?mode=viewip&post=$myrow[post_id]&forum=$forum\"><IMG SRC=\"$ip_image\" BORDER=0 ALT=\"$l_viewip\"></a>\n";
    }
    echo "</TD></TR>";
    $count++;
@@ -326,11 +326,11 @@ if($total > $posts_per_page) {
 ?>
 <TR>
 	<TD>
-		<a href="newtopic.<?php echo $phpEx?>?forum=<?php echo $forum?>"><IMG SRC="<?php echo $newtopic_image?>" BORDER="0"></a>&nbsp;&nbsp;
+		<a href="newtopic.php?forum=<?php echo $forum?>"><IMG SRC="<?php echo $newtopic_image?>" BORDER="0"></a>&nbsp;&nbsp;
 <?php
 		if($lock_state != 1) {
 ?>
-			<a href="<?php echo $url_phpbb ?>/reply.<?php echo $phpEx?>?topic=<?php echo $topic ?>&forum=<?php echo $forum ?>"><IMG SRC="<?php echo $reply_image ?>" BORDER="0"></a></TD>
+			<a href="<?php echo $url_phpbb ?>/reply.php?topic=<?php echo $topic ?>&forum=<?php echo $forum ?>"><IMG SRC="<?php echo $reply_image ?>" BORDER="0"></a></TD>
 <?php
 		}
 		else {
@@ -349,12 +349,12 @@ make_jumpbox();
 <?php
 echo "<CENTER>";
 if($lock_state != 1)
-	echo "<a href=\"$url_phpbb/topicadmin.$phpEx?mode=lock&topic=$topic&forum=$forum\"><IMG SRC=\"$locktopic_image\" ALT=\"$l_locktopic\" BORDER=0></a> ";
+	echo "<a href=\"$url_phpbb/topicadmin.php?mode=lock&topic=$topic&forum=$forum\"><IMG SRC=\"$locktopic_image\" ALT=\"$l_locktopic\" BORDER=0></a> ";
 else
-	echo "<a href=\"$url_phpbb/topicadmin.$phpEx?mode=unlock&topic=$topic&forum=$forum\"><IMG SRC=\"$unlocktopic_image\" ALT=\"$l_unlocktopic\" BORDER=0></a> ";
+	echo "<a href=\"$url_phpbb/topicadmin.php?mode=unlock&topic=$topic&forum=$forum\"><IMG SRC=\"$unlocktopic_image\" ALT=\"$l_unlocktopic\" BORDER=0></a> ";
 
-echo "<a href=\"$url_phpbb/topicadmin.$phpEx?mode=move&topic=$topic&forum=$forum\"><IMG SRC=\"$movetopic_image\" ALT=\"$l_movetopic\" BORDER=0></a> ";
-echo "<a href=\"$url_phpbb/topicadmin.$phpEx?mode=del&topic=$topic&forum=$forum\"><IMG SRC=\"$deltopic_image\" ALT=\"$l_deletetopic\" BORDER=0></a></CENTER>\n";
+echo "<a href=\"$url_phpbb/topicadmin.php?mode=move&topic=$topic&forum=$forum\"><IMG SRC=\"$movetopic_image\" ALT=\"$l_movetopic\" BORDER=0></a> ";
+echo "<a href=\"$url_phpbb/topicadmin.php?mode=del&topic=$topic&forum=$forum\"><IMG SRC=\"$deltopic_image\" ALT=\"$l_deletetopic\" BORDER=0></a></CENTER>\n";
 
 }
 

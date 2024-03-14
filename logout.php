@@ -24,9 +24,9 @@
  * - Used for logging out a user and deleting a session.
  */
 
-include('functions.'.$phpEx);
-include('config.'.$phpEx);
-require('auth.'.$phpEx);
+include('functions.php');
+include('config.php');
+require('auth.php');
 $pagetitle = $l_logout;
 $pagetype = "logout";
 
@@ -36,6 +36,6 @@ if ($user_logged_in) {
 	end_user_session($userdata[user_id], $db);
 }
 
-	header("Location: $url_phpbb/index.$phpEx");
-require('page_tail.'.$phpEx);
+	header("Location: $url_phpbb/index.php");
+require('page_tail.php');
 ?>

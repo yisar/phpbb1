@@ -20,7 +20,7 @@
  ***************************************************************************/
 
 if(isset($cancel) && $cancel) {
-	header("Location: viewtopic.$phpEx?topic=$topic&forum=$forum");
+	header("Location: viewtopic.php?topic=$topic&forum=$forum");
 }
 
 include('functions.php');
@@ -216,8 +216,8 @@ if($HTTP_POST_VARS['submit']) {
    echo "<br><TABLE BORDER=\"0\" CELLPADDING=\"1\" CELLSPACEING=\"0\" ALIGN=\"CENTER\" VALIGN=\"TOP\" WIDTH=\"$tablewidth\">";
    echo "<TR><TD  BGCOLOR=\"$table_bgcolor\"><TABLE BORDER=\"0\" CALLPADDING=\"1\" CELLSPACEING=\"1\" WIDTH=\"100%\">";
    echo "<TR BGCOLOR=\"$color1\" ALIGN=\"LEFT\"><TD><font face=\"Verdana\" size=\"2\"><P>";
-   echo "<P><BR><center>$l_stored<ul>$l_click <a href=\"viewtopic.$phpEx?topic=$topic&forum=$forum&$total_topic\">$l_here</a> $l_viewmsg<P>";
-   echo "$l_click <a href=\"viewforum.$phpEx?forum=$forum&$total_forum\">$l_here</a> $l_returntopic</ul></center><P></font>";
+   echo "<P><BR><center>$l_stored<ul>$l_click <a href=\"viewtopic.php?topic=$topic&forum=$forum&$total_topic\">$l_here</a> $l_viewmsg<P>";
+   echo "$l_click <a href=\"viewforum.php?forum=$forum&$total_forum\">$l_here</a> $l_returntopic</ul></center><P></font>";
    echo "</TD></TR></TABLE></TD></TR></TABLE><br>";
 
 } else {
@@ -354,7 +354,7 @@ if($HTTP_POST_VARS['submit']) {
 		// no session, need a password.
 		echo "    <TR ALIGN=\"LEFT\"> \n";
 		echo "    <font size=\"$FontSize2\" face=\"$FontFace\">";
-		echo "        <TD BGCOLOR=\"$color1\" width=25%><b>$l_password:</b><BR><font size=\"$FontSize3\"><i><a href=\"sendpassword.$phpEx\" target=\"_blank\">$l_passwdlost</a></i></font></TD> \n";
+		echo "        <TD BGCOLOR=\"$color1\" width=25%><b>$l_password:</b><BR><font size=\"$FontSize3\"><i><a href=\"sendpassword.php\" target=\"_blank\">$l_passwdlost</a></i></font></TD> \n";
 		echo "        <TD BGCOLOR=\"$color2\"><INPUT TYPE=\"PASSWORD\" NAME=\"password\" SIZE=\"25\" MAXLENGTH=\"25\"></TD> \n";
 		echo "    </TR> \n";
 	}
@@ -448,7 +448,7 @@ if($HTTP_POST_VARS['submit']) {
 	// Topic review
 	echo "<font size=\"$FontSize2\" face=\"$FontFace\">";
 	echo "<BR><CENTER>";
-	echo "<a href=\"viewtopic.$phpEx?topic=$topic&forum=$forum\" target=\"_blank\"><b>$l_topicreview</b></a>";
+	echo "<a href=\"viewtopic.php?topic=$topic&forum=$forum\" target=\"_blank\"><b>$l_topicreview</b></a>";
 	echo "</CENTER><BR>";
 
 }

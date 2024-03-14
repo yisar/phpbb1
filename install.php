@@ -1,6 +1,6 @@
 <?php
 
-include("functions.$phpEx");
+include("functions.php");
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
 <HTML>
@@ -544,10 +544,10 @@ include("functions.$phpEx");
 				if (!$ret) {
 					die("执行sql失败:" . mysqli_error($conn));
 				}
-				$config_file = file("./config.$phpEx");
+				$config_file = file("./config.php");
 				if (!strstr($config_file[count($config_file) - 1], '?>')) {  // Last line of config file shouldn't contain php closing tag.
-					if (!$fp = fopen("./config.$phpEx", "a"))
-						die("Error opening config.$phpEx, please check and make sure it exists in the same directory as this installation script and then try again.");
+					if (!$fp = fopen("./config.php", "a"))
+						die("Error opening config.php, please check and make sure it exists in the same directory as this installation script and then try again.");
 					$config_data = '$dbhost = "' . $dbserver . '";' . "\n" .
 						'$dbname = "' . $dbname . '";' . "\n" .
 						'$dbuser = "' . $dbuser . '";' . "\n" .

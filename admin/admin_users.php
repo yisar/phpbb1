@@ -103,7 +103,7 @@ switch($mode) {
 			if(!$edit_user_id) {
 				$sql = "SELECT username, user_id FROM users ORDER BY username";
 				if(!$r = mysql_query($sql, $db))
-					die("Error connecting to the database. Please check your config.$phpEx file.");
+					die("Error connecting to the database. Please check your config.php file.");
 				if(!$m = mysql_fetch_array($r))
 					die("No users in the database.");
 ?>
@@ -140,13 +140,13 @@ switch($mode) {
 				if($moduserdata[user_rank] != 0) {
 					$sql = "SELECT rank_id, rank_title FROM ranks WHERE rank_min < " . $moduserdata[user_posts] . " AND rank_max > " . $moduserdata[user_posts] . " AND rank_special = 0";
 					if(!$r = mysql_query($sql, $db))
-						die("Error connecting to the database. Please check your config.$phpEx file.");
+						die("Error connecting to the database. Please check your config.php file.");
 					list($rank_id, $rank) = @mysql_fetch_array($r);
 				}
 				else {
 					$sql = "SELECT rank_title FROM ranks WHERE rank_id = '$moduserdata[user_rank]'";
 					if(!$r = mysql_query($sql, $db))
-                                                die("Error connecting to the database. Please check your config.$phpEx file.");
+                                                die("Error connecting to the database. Please check your config.php file.");
                                         list($rank) = @mysql_fetch_array($r);
 				}
 ?>
@@ -183,7 +183,7 @@ switch($mode) {
 				}
 				else {
 					echo "<OPTION VALUE=\"0\">No Special Ranks in Database</OPTION></SELECT>\n";
-					echo "<BR><FONT FACE=\"$FontFace\" SIZE=\"$FontSize2\" COLOR=\"$textcolor\">Click <a href=\"admin_board.$phpEx?mode=rankadmin\">here</a> to add Ranks.</FONT>";
+					echo "<BR><FONT FACE=\"$FontFace\" SIZE=\"$FontSize2\" COLOR=\"$textcolor\">Click <a href=\"admin_board.php?mode=rankadmin\">here</a> to add Ranks.</FONT>";
 				}
 ?>
 	</TD>
@@ -363,7 +363,7 @@ switch($mode) {
 <?php
 	$sql = "SELECT disallow_id, disallow_username FROM disallow";
 	if(!$r = mysql_query($sql, $db)) {
-		echo "<TR BGCOLOR=\"$color1\" ALIGN=\"LEFT\"><TD COLSPAN=\"3\">Error - Could not query the database. Please check your config.$phpEx file.</TD></TR></TABLE></TABLE>";
+		echo "<TR BGCOLOR=\"$color1\" ALIGN=\"LEFT\"><TD COLSPAN=\"3\">Error - Could not query the database. Please check your config.php file.</TD></TR></TABLE></TABLE>";
 		include('../page_tail.php');
 		exit();
 	}
@@ -430,7 +430,7 @@ switch($mode) {
 
 			$sql = "SELECT username, user_id FROM users WHERE user_id != -1 ORDER BY username";
                         if(!$r = mysql_query($sql, $db))
-                        	die("Error connecting to the database. Please check your config.$phpEx file.");
+                        	die("Error connecting to the database. Please check your config.php file.");
                        	if(!$m = mysql_fetch_array($r))
                                 die("No users in the database.");
 ?>

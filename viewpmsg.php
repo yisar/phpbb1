@@ -20,7 +20,7 @@
  ***************************************************************************/
 
 /**
- * viewpmsg.$phpEx - Nathan Codding
+ * viewpmsg.php - Nathan Codding
  * - Used for receiving private messages between users of the BB.
  */
 
@@ -88,7 +88,7 @@ if (!$submit && !$user_logged_in) {
 		$message = stripslashes($myrow[msg_text]);
 		echo $message . "<BR><BR>";
 		echo "<HR>\n";
-		echo "&nbsp;&nbsp<a href=\"bb_profile.$phpEx?mode=view&user=$posterdata[user_id]\"><img src=\"$profile_image\" border=0 alt=\"$l_profileof $myrow[poster_name]\"></a>\n";
+		echo "&nbsp;&nbsp<a href=\"bb_profile.php?mode=view&user=$posterdata[user_id]\"><img src=\"$profile_image\" border=0 alt=\"$l_profileof $myrow[poster_name]\"></a>\n";
 		if($posterdata["user_viewemail"] != 0) 
 			echo "&nbsp;&nbsp;<a href=\"mailto:$posterdata[user_email]\"><IMG SRC=\"$email_image\" BORDER=0 ALT=\"$l_emial $posterdata[username]\"></a>\n";
 		if($posterdata["user_web"] != '') {
@@ -103,11 +103,11 @@ if (!$submit && !$user_logged_in) {
      		echo "&nbsp;&nbsp;<a href=\"aim:goim?screenname=$posterdata[user_aim]&message=Hi+$posterdata[user_aim].+Are+you+there?\"><img src=\"$images_aim\" border=\"0\"></a>";
 	
 		echo "&nbsp;&nbsp;<IMG SRC=\"images/div.gif\">\n";
-		echo "&nbsp;&nbsp;<a href=\"replypmsg.$phpEx?msgid=$myrow[msg_id]&quote=1\"><IMG SRC=\"$reply_wquote_image\" BORDER=\"0\" alt=\"$l_replyquote\"></a>\n";
+		echo "&nbsp;&nbsp;<a href=\"replypmsg.php?msgid=$myrow[msg_id]&quote=1\"><IMG SRC=\"$reply_wquote_image\" BORDER=\"0\" alt=\"$l_replyquote\"></a>\n";
 		echo "&nbsp;&nbsp;<IMG SRC=\"images/div.gif\">\n";
-		echo "&nbsp;&nbsp;<a href=\"replypmsg.$phpEx?msgid=$myrow[msg_id]\">$l_reply</a>\n";
+		echo "&nbsp;&nbsp;<a href=\"replypmsg.php?msgid=$myrow[msg_id]\">$l_reply</a>\n";
 		echo "&nbsp;&nbsp;<IMG SRC=\"images/div.gif\">\n";
-		echo "&nbsp;&nbsp;<a href=\"$url_phpbb/delpmsg.$phpEx?msgid=$myrow[msg_id]\">$l_delete</a>\n";
+		echo "&nbsp;&nbsp;<a href=\"$url_phpbb/delpmsg.php?msgid=$myrow[msg_id]\">$l_delete</a>\n";
 	
 		echo "</TD></TR>";
 	} //while ($myrow = mysql_fetch_array($resultID));
