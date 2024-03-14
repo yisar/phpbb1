@@ -493,43 +493,6 @@ function is_locked($topic, $db)
  * This keeps them from breaking HTML code and BBCode.
  * TODO: Get rid of global variables.
  */
-function smile($message)
-{
-	global $db, $url_smiles;
-
-	// Pad it with a space so the regexp can match.
-	$message = ' ' . $message;
-
-	if ($getsmiles = mysql_query("SELECT *, length(code) as length FROM smiles ORDER BY length DESC")) {
-		while ($smiles = mysqli_fetch_array($getsmiles)) {
-			$smile_code = preg_quote($smiles[code]);
-			$smile_code = str_replace('/', '//', $smile_code);
-			$message = preg_replace("/([\n\\ \\.])$smile_code/si", '\1<IMG SRC="' . $url_smiles . '/' . $smiles[smile_url] . '">', $message);
-		}
-	}
-
-	// Remove padding, return the new string.
-	$message = substr($message, 1);
-	return($message);
-}
-
-/*
- * Changes a Smiliy <IMG> tag into its corresponding smile
- * TODO: Get rid of golbal variables, and implement a method of distinguishing between :D and :grin: using the <IMG> tag
- */
-function desmile($message)
-{
-	// Ick Ick Global variables...remind me to fix these! - theFinn
-	global $db, $url_smiles;
-
-	if ($getsmiles = mysql_query("SELECT * FROM smiles")) {
-		while ($smiles = mysqli_fetch_array($getsmiles)) {
-			$message = str_replace("<IMG SRC=\"$url_smiles/$smiles[smile_url]\">", $smiles[code], $message);
-		}
-	}
-	return($message);
-}
-
 /**
  * bbdecode/bbencode functions:
  * Rewritten - Nathan Codding - Aug 24, 2000

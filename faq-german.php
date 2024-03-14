@@ -105,46 +105,6 @@ include('page_header.php');
 	<table width="50%" ALIGN="CENTER" BGCOLOR="<?php echo $table_bgcolor?>" CELLSPACEING=1 BORDER="0">
 	  <TR><TD>
 	  <TABLE WIDTH="100%" BORDER="0">
-		 <TR BGCOLOR="<?php echo $color1?>">
-		 <TD width="100">
-		 	<FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">
-		 		<?php echo $l_smilesym?>
-		 	</FONT>
-		 </td>
-		 <td width="50%">
-		 	<FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">
-				<?php echo $l_smileemotion?>
-			</FONT>
-		</td>
-		<td width="55">
-		 	<FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">
-				<?php echo $l_smilepict?>
-			</FONT>
-		</td></tr>
- <?php
-
-	  if ($getsmiles = mysql_query("SELECT * FROM smiles")) {
-	     while ($smile = mysql_fetch_array($getsmiles)) {
-?>
-		 <TR BGCOLOR="<?php echo $color2?>">
-		 <TD width="100">
-		 	<FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">
-		 		<?php echo stripslashes($smile[code])?>
-		 	</FONT>
-		 </td>
-		 <td width="50%">
-		 	<FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">
-				<?php echo stripslashes($smile[emotion])?>&nbsp;
-			</FONT>
-		</td>
-		<td width="55">
-			<IMG SRC="<?php echo "$url_smiles/$smile[smile_url]";?>">
-		</td></tr>
-<?php
-	     }
-	  } else
-	     echo "Fehler 102: Konnte Smileys nicht in der Datenbank finden.";
-?>
     </TABLE></TABLE>
     </div>
 	</td>

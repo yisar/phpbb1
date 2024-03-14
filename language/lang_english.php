@@ -315,11 +315,6 @@ $l_reply	= "Reply";
 // Delpmsg
 $l_deletesucces	= "Deletion successful.";
 
-// Smilies
-$l_smilesym	= "What to type";
-$l_smileemotion	= "Emotion";
-$l_smilepict	= "Picture";
-
 // Sendpasswd
 $l_wrongactiv	= "The activation key you provided is not correct. Please check email $l_message you recived and make sure you have copied the activation key exactly.";
 $l_passchange	= "Your password has been successfully changed. You may now goto your <a href=\"bb_profile.php?mode=edit\">profile</a> and change your password to a more suitable one.";

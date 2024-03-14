@@ -210,13 +210,6 @@ include("functions.php");
 											   PRIMARY KEY (access_id)
 											   )",
 
-						"smiles" => "CREATE TABLE smiles (
-											    id int(10) NOT NULL AUTO_INCREMENT,
-											    code varchar(50),
-											    smile_url varchar(100),
-											    emotion varchar(75),
-											    PRIMARY KEY(id)
-											    )",
 						"words" => "CREATE TABLE words (
 											  word_id int(10) NOT NULL AUTO_INCREMENT ,
 											  word varchar(100),
@@ -255,39 +248,7 @@ include("functions.php");
 						"ocean" => "INSERT INTO themes VALUES (2,'Ocean','#FFFFFF','#000000','#CCCCCC','#9BB6DA','#000000','images/header.jpg','images/new_topic.jpg','images/reply.jpg','#011001','#2100cc', '0', 'sans-serif', '1','2','-2','+1','95%','images/reply_locked-dark.jpg')",
 						"OCPrices.com" => "INSERT INTO themes VALUES (3,'OCPrices.com','#FFFFFF','#000000','#efefef','#cdcdcd','#001100','images/header.jpg','images/new_topic.jpg','images/reply.jpg','#000000','#000000', '0', 'sans-serif', '1','2','-2','+1','95%','images/reply_locked-dark.jpg')"
 					);
-					$ta_smile_data = array(
-						"INSERT INTO smiles VALUES (1,':D','icon_biggrin.gif','Very Happy')",
-						"INSERT INTO smiles VALUES (2,':-D','icon_biggrin.gif','Very Happy')",
-						"INSERT INTO smiles VALUES (3,':grin:','icon_biggrin.gif','Very Happy')",
-						"INSERT INTO smiles VALUES (4,':)','icon_smile.gif','Smile')",
-						"INSERT INTO smiles VALUES (5,':-)','icon_smile.gif','Smile')",
-						"INSERT INTO smiles VALUES (6,':smile:','icon_smile.gif','Smile')",
-						"INSERT INTO smiles VALUES (7,':(','icon_frown.gif','Sad')",
-						"INSERT INTO smiles VALUES (8,':-(','icon_frown.gif','Sad')",
-						"INSERT INTO smiles VALUES (9,':sad:','icon_frown.gif','Sad')",
-						"INSERT INTO smiles VALUES (10,':o','icon_eek.gif','Surprised')",
-						"INSERT INTO smiles VALUES (11,':-o','icon_eek.gif','Surprised')",
-						"INSERT INTO smiles VALUES (12,':eek:','icon_eek.gif','Suprised')",
-						"INSERT INTO smiles VALUES (13,':-?','icon_confused.gif','Confused')",
-						"INSERT INTO smiles VALUES (14,':???:','icon_confused.gif','Confused')",
-						"INSERT INTO smiles VALUES (15,'8)','icon_cool.gif','Cool')",
-						"INSERT INTO smiles VALUES (16,'8-)','icon_cool.gif','Cool')",
-						"INSERT INTO smiles VALUES (17,':cool:','icon_cool.gif','Cool')",
-						"INSERT INTO smiles VALUES (18,':lol:','icon_lol.gif','Laughing')",
-						"INSERT INTO smiles VALUES (19,':x','icon_mad.gif','Mad')",
-						"INSERT INTO smiles VALUES (20,':-x','icon_mad.gif','Mad')",
-						"INSERT INTO smiles VALUES (21,':mad:','icon_mad.gif','Mad')",
-						"INSERT INTO smiles VALUES (22,':P','icon_razz.gif','Razz')",
-						"INSERT INTO smiles VALUES (23,':-P','icon_razz.gif','Razz')",
-						"INSERT INTO smiles VALUES (24,':razz:','icon_razz.gif','Razz')",
-						"INSERT INTO smiles VALUES (25,':oops:','icon_redface.gif','Embaressed')",
-						"INSERT INTO smiles VALUES (26,':cry:','icon_cry.gif','Crying (very sad)')",
-						"INSERT INTO smiles VALUES (27,':evil:','icon_evil.gif','Evil or Very Mad')",
-						"INSERT INTO smiles VALUES (28,':roll:','icon_rolleyes.gif','Rolling Eyes')",
-						"INSERT INTO smiles VALUES (29,':wink:','icon_wink.gif','Wink')",
-						"INSERT INTO smiles VALUES (30,';)','icon_wink.gif','Wink')",
-						"INSERT INTO smiles VALUES (31,';-)','icon_wink.gif','Wink')"
-					);
+					
 
 					foreach ($tables as $name => $table) {
 						echo "<TR><TD>Creating table $name</TD> ";

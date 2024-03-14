@@ -165,10 +165,6 @@ else {
 </TR>
 
 <TR BGCOLOR="<?php echo $color2?>" ALIGN="LEFT">
-     <TD><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>"><a href="<?php echo $url_admin?>/smiles.php">Edit/Add/Delete Smiles</a></FONT></TD>
-     <TD><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">This link allows you to edit and delete smiles, and add new ones.</FONT></TD>
-</TR>
-<TR BGCOLOR="<?php echo $color2?>" ALIGN="LEFT">
      <TD><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>"><a href="<?php echo $url_admin?>/admin_themes.php">Add/Edit/Delete Themes</a></FONT></TD>
      <TD><FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">This link allows you to add, edit, and delete forum themes.</FONT></TD>
 </TR>

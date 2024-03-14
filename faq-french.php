@@ -102,46 +102,6 @@ include('page_header.php');
 	<div align="center"><center>
 	<table border=0 cellpadding=0 cellspacing=0 align="CENTER"><TR><td bgcolor="#FFFFFF">
 	  <TABLE WIDTH="500" border="0" cellpadding="0" cellspacing="1">
-		 <TR BGCOLOR="<?php echo $color1?>">
-		 <TD width="200" align="center">
-		 	<FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">
-		 		<?php echo $l_smilesym?>
-		 	</FONT>
-		 </td>
-		 <td width="200" align="center">
-		 	<FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">
-				<?php echo $l_smileemotion?>
-			</FONT>
-		</td>
-		<td width="100" align="center">
-		 	<FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">
-				<?php echo $l_smilepict?>
-			</FONT>
-		</td></tr>
- <?php
-
-	  if ($getsmiles = mysql_query("SELECT * FROM smiles")) {
-	     while ($smile = mysql_fetch_array($getsmiles)) {
-?>
-		 <TR BGCOLOR="<?php echo $color2?>">
-		 <TD width="200" align="center">
-		 	<FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">
-		 		<?php echo stripslashes($smile[code])?>
-		 	</FONT>
-		 </td>
-		 <td width="200" align="center">
-		 	<FONT FACE="<?php echo $FontFace?>" SIZE="<?php echo $FontSize2?>" COLOR="<?php echo $textcolor?>">
-				<?php echo stripslashes($smile[emotion])?>&nbsp;
-			</FONT>
-		</td>
-		<td width="100" align="center">
-			<IMG SRC="<?php echo "$url_smiles/$smile[smile_url]";?>">
-		</td></tr>
-<?php
-	     }
-	  } else
-	     echo "Could not retrieve from the smile database.";
-?>
     </TABLE>
 		</td></tr>
 
