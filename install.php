@@ -478,7 +478,7 @@ include("functions.$phpEx");
 													emails sent by the forums)</i>
 										<TD><TEXTAREA NAME="email_sig" ROWS="5" COLS="15">Yours Truely,
 	
-																											The Site Admin</TEXTAREA></TD>
+																														The Site Admin</TEXTAREA></TD>
 									</TR>
 									<TR BGCOLOR="<?php echo $color2 ?>" ALIGN="LEFT">
 										<TD>Allow HTML:</TD>
@@ -525,18 +525,24 @@ include("functions.$phpEx");
 
 				break;
 			case 'options':
-				if (!$db = mysql_connect("$dbserver", "$dbuser", "$dbpass"))
-					die("<font color=\"#FF0000\">Error, I could not connect to the database at $dbserver. Using username $dbuser and password $dbpass.<BR>Please go back and try again.");
-				mysql_select_db("$dbname", $db);
-
+				$name = $_POST['name'];
+				$hot = $_POST['hot'];
+				$ppp = $_POST['ppp'];
+				$tpp = $_POST['tpp'];
+				$email_from = $_POST['email_from'];
+				$email_sig = $_POST['email_sig'];
+				$conn = mysqli_connect($dbserver, $dbuser, $dbpass, "phpbb");
+				if (!$conn) {
+					die("连接失败:" . mysqli_connect_error());
+				}
+				$language = 'chinese';
 				$name = addslashes($name);
 				$email_sig = addslashes($email_sig);
-				$sql = "INSERT INTO config (sitename, allow_html, allow_bbcode, allow_sig, hot_threshold, posts_per_page, topics_per_page,  email_from, email_sig, selected, default_lang) ";
-				$sql .= "VALUES ('$name', $html, $bb, $sig, $hot, $ppp, $tpp,  '$email_from', '$email_sig', 1, '$language')";
-				$result = mysqli_query($conn, $sql, $db);
-				if (!$result) {
-					echo mysqli_error($conn) . "<br>";
-					die("Error - Cannot update the database.</FONT>");
+				$sql = "INSERT INTO config (sitename, hot_threshold, posts_per_page, topics_per_page,  email_from, email_sig, selected, default_lang) ";
+				$sql .= "VALUES ('$name', $hot, $ppp, $tpp,  '$email_from', '$email_sig', 1, '$language')";
+				$ret = mysqli_query($conn, $sql);
+				if (!$ret) {
+					die("执行sql失败:" . mysqli_error($conn));
 				}
 				$config_file = file("./config.$phpEx");
 				if (!strstr($config_file[count($config_file) - 1], '?>')) {  // Last line of config file shouldn't contain php closing tag.
@@ -579,7 +585,7 @@ include("functions.$phpEx");
 					break;
 		}
 	} else {  // First screen
-
+	
 		?>
 			<FORM METHOD="POST" ACTION="<?php echo $PHP_SELF ?>">
 				<TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" ALIGN="CENTER" VALIGN="TOP" WIDTH="95%">

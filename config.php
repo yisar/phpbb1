@@ -114,3 +114,8 @@ $images_msnm = "$url_images/msnm.gif";
 /* -- Other Settings -- */
 $phpbbversion = "1.4.4";
 $PHP_SELF = $PATH_INFO;
+$dbhost = "localhost";
+$dbname = "phpbb";
+$dbuser = "root";
+$dbpasswd = "phpts";
+?>
